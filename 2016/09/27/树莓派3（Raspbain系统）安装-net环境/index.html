@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>树莓派3（Raspbain系统）安装.net环境 | 蒋子珑的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="因为公司之前做的网站项目都是基于微软的.net平台，现在需要在树莓派3上测试它是否能负载起正常的访问请求。最开始直接的想到微软3月份刚发布针对于树莓派3的win10系统，其实说是win10,也就是一个超级精简的嵌入式系统，不过看支持列表里包括win10，所以就打算先试一试。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="树莓派3（Raspbain系统）安装.net环境">
+<meta property="og:url" content="http://yoursite.com/2016/09/27/树莓派3（Raspbain系统）安装-net环境/index.html">
+<meta property="og:site_name" content="蒋子珑的博客">
+<meta property="og:description" content="因为公司之前做的网站项目都是基于微软的.net平台，现在需要在树莓派3上测试它是否能负载起正常的访问请求。最开始直接的想到微软3月份刚发布针对于树莓派3的win10系统，其实说是win10,也就是一个超级精简的嵌入式系统，不过看支持列表里包括win10，所以就打算先试一试。">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927142910203-1868102429.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927143106031-40165117.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927145319750-496190871.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927150814016-537286363.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927150926844-318764430.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927151913391-1464032230.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927152713203-131199162.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927152618047-19726767.png">
+<meta property="og:updated_time" content="2017-02-25T12:53:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="树莓派3（Raspbain系统）安装.net环境">
+<meta name="twitter:description" content="因为公司之前做的网站项目都是基于微软的.net平台，现在需要在树莓派3上测试它是否能负载起正常的访问请求。最开始直接的想到微软3月份刚发布针对于树莓派3的win10系统，其实说是win10,也就是一个超级精简的嵌入式系统，不过看支持列表里包括win10，所以就打算先试一试。">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927142910203-1868102429.png">
+  
+    <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="/img/logo1.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">蒋子珑</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">保持渴望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://www.jiangzilong.com">主页</a></li>
+				        
+							<li><a href="/">博客主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/Excel上传/" style="font-size: 10px;">Excel上传</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/LiveEdit/" style="font-size: 10px;">LiveEdit</a> <a href="/tags/NPOI/" style="font-size: 10px;">NPOI</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/元素对齐/" style="font-size: 10px;">元素对齐</a> <a href="/tags/树莓派3/" style="font-size: 10px;">树莓派3</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jiangzilong.com/">蒋子珑的个人小站主页</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme" class="switch-aboutme">希望不断成长，变得和身边的人一样优秀</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">蒋子珑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/logo1.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">蒋子珑</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">保持渴望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://www.jiangzilong.com">主页</a></li>
+		        
+					<li><a href="/">博客主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-树莓派3（Raspbain系统）安装-net环境" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/27/树莓派3（Raspbain系统）安装-net环境/" class="article-date">
+  	<time datetime="2016-09-27T07:41:00.000Z" itemprop="datePublished">2016-09-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      树莓派3（Raspbain系统）安装.net环境
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/net/">.net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树莓派3/">树莓派3</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>因为公司之前做的网站项目都是基于微软的.net平台，现在需要在树莓派3上测试它是否能负载起正常的访问请求。最开始直接的想到微软3月份刚发布针对于树莓派3的win10系统，其实说是win10,也就是一个超级精简的嵌入式系统，不过看支持列表里包括win10，所以就打算先试一试。</p><br><a id="more"></a><br><p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927142910203-1868102429.png" alt=""></p><br><br><br><p>结果发现兼容树莓派3的Windows 10 IoT系统只有预览版本，正式版只是针对于2代，3的正式版还未发布。而所谓的核心预览版。。。。。。对于没接触过底层开发的我来说就是一个带着图形界面的硬盘 [尴尬脸]</p><br><p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927143106031-40165117.png" alt=""></p>
+
+<p>无奈之下重新安装了树莓派官方的 Raspbain 系统，linux 内核，自己之前也做过 ubuntu 系统的服务器搭建，好歹也会熟悉一些。下面进入正题。<br>总的来说在 linux 系统下搭建.net环境的组合是 mono+jexus ，mono主要作用是提供.net环境，使系统可以运行C#程序；而jexus则类似于window下的IIS，linux下的tomcat，作为网站的管理服务存在，提供一个可供外网访问的接口。jexus也存在不依赖于mono的独立版，在这儿没有采用这种方法，有兴趣可以<a title="jexus独立版" href="http://www.cnblogs.com/yunei/p/5452120.html" target="_blank">戳这里</a>。</p><br><br><br><span style="font-size: 18pt; font-family: 'Microsoft YaHei'; color: #339966;">第一步：安装mono</span><br><hr><br><p>&nbsp;搜集了很多网上的资料，根据文中提到的版本去下载安装发现在下一步安装jexus的时候会提示需要安装mono或.net环境，说明上一步没有安装成功，但仔细检查没有发现问题，看来还是文件包不行，最后直接从库里下载安装成功。</p><br><pre>sudo apt-get install mono-complete</pre><br><p>安装完成后输入</p><br><pre>mono -V</pre><br><p>会显示当前版本号和版本信息，随后用一句简单的C#语句用来测试</p><br><p>输入 csharp ，随后在命令中输入</p><br><pre>Console.WriteLine(DateTime.Now);</pre><br><p>可以得到系统时间。</p><br><p>&nbsp;<img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927145319750-496190871.png" alt="" width="567" height="312"></p><br><p>PS:这里是服务器本地的时间，可以通过&nbsp;date -s “2016-09-27 00:00:00” 命令进行纠正。</p><br><br><br><span style="font-size: 18pt; font-family: 'Microsoft YaHei'; color: #339966;">第二步：安装jexus</span><br><hr><br><p>&nbsp;执行以下代码下载安装包。可以新建一个文件夹存放下载文件，我在这儿使用的是/root/software</p><br><p><strong><span style="color: #800000; font-size: 18px;">&nbsp;注意：</span></strong>因树莓派是arm处理器，所以必须下载jexus arm专用版，不然会出现安装后资源请求过慢的问题。自己之前没注意最后发现一个200k的css包请求时间就超过30s</p>
+
+<pre><span style="color: #008080;">1</span> wget -c http://www.linuxdot.net/down/jexus-5.8.2-arm.tar.gz
+<span style="color: #008080;">2</span> tar -zxvf jexus-5.8.2-arm.tar.gz
+<span style="color: #008080;">3</span> cd jexus-5.8.2-arm</pre>
+
+<p>也可以在官网上下载最新版本随后用FlashFXP和WinSCP之类的工具传过去，方法类似。</p><br><p>解压后执行安装命令：</p>
+
+<pre>sudo ./install</pre>
+
+<p>jexus会自动安装到/usr/jexus中，随后移动到该文件夹启动服务</p>
+
+<pre><span style="color: #008080;">1</span> cd /usr/jexus
+<span style="color: #008080;">2</span> sudo ./jws regsvr
+<span style="color: #008080;">3</span> sudo ./jws start
+<span style="color: #008080;">4</span> curl localhost/info</pre>
+
+<p>最后一句为测试命令，输出结果：</p><br><p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927150814016-537286363.png" alt=""></p><br><p>或者直接通过其他电脑的浏览器输入 IP/info ，可看到如下欢迎界面</p><br><p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927150926844-318764430.png" alt=""></p><br><p>初步搞定！也可以通过运行 vim /etc/rc.local 或类似的开机启动脚本，在其中加入&nbsp;</p><br><pre>/usr/jexus/jws.start</pre><br><p>设置开机启动</p>
+
+<p><span style="font-size: 18pt; font-family: 'Microsoft YaHei'; color: #339966;">第三步：配置与发布</span></p>
+<p><hr></p>
+<p>&nbsp;执行命令进入配置文件<br></p>
+
+<pre>vim /usr/jexus/siteconf/default</pre>
+
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927151913391-1464032230.png" alt="" width="528" height="314"></p><br><p>可以看到默认路径为/var/www/default文件夹，及网站资源访问的默认路径，我们就可以把网站的UI文件夹内的内容复制进去，随后通过IP即可访问。</p><br><p>在这里我传了一个index.html文件作为测试<img src="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927152713203-131199162.png" alt="" width="119" height="76">，效果如下图</p><br><p>&nbsp;<img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/984702/201609/984702-20160927152618047-19726767.png" alt=""></p><br><p>此外还可以通过jexus的配置文件配置端口，映射等内容，有兴趣的朋友可以再去尝试。</p>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/18/JS异步上传Excel并使用NPOI进行读写操作/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          JS异步上传Excel 并使用NPOI进行读写操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/08/23/CSS3实现鼠标悬停扩展效果/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CSS3实现鼠标悬停扩展效果</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="树莓派3（Raspbain系统）安装-net环境" data-title="树莓派3（Raspbain系统）安装.net环境" data-url="http://yoursite.com/2016/09/27/树莓派3（Raspbain系统）安装-net环境/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 蒋子珑
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
