@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>读书笔记 — 《高性能JavaScript》4-8章 | 蒋子珑的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="第4章 算法和流程控制内容：程序算法和流程优化，包括优化循环、递归等等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记 — 《高性能JavaScript》4-8章">
+<meta property="og:url" content="http://yoursite.com/2017/04/30/读书笔记 — 《高性能JavaScript》4-8章/index.html">
+<meta property="og:site_name" content="蒋子珑的博客">
+<meta property="og:description" content="第4章 算法和流程控制内容：程序算法和流程优化，包括优化循环、递归等等">
+<meta property="og:updated_time" content="2017-06-15T06:11:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读书笔记 — 《高性能JavaScript》4-8章">
+<meta name="twitter:description" content="第4章 算法和流程控制内容：程序算法和流程优化，包括优化循环、递归等等">
+  
+    <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="/img/logo1.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">蒋子珑</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">保持渴望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://www.jiangzilong.com">主页</a></li>
+				        
+							<li><a href="/">博客主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/Excel上传/" style="font-size: 10px;">Excel上传</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/JavaScript权威指南/" style="font-size: 10px;">JavaScript权威指南</a> <a href="/tags/LiveEdit/" style="font-size: 10px;">LiveEdit</a> <a href="/tags/NPOI/" style="font-size: 10px;">NPOI</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/事件监听/" style="font-size: 10px;">事件监听</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/元素对齐/" style="font-size: 10px;">元素对齐</a> <a href="/tags/树莓派3/" style="font-size: 10px;">树莓派3</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a> <a href="/tags/高性能JavaScript/" style="font-size: 12.5px;">高性能JavaScript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jiangzilong.com/">蒋子珑的个人小站主页</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme" class="switch-aboutme">希望不断成长，变得和身边的人一样优秀</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">蒋子珑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/logo1.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">蒋子珑</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">保持渴望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://www.jiangzilong.com">主页</a></li>
+		        
+					<li><a href="/">博客主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-读书笔记 — 《高性能JavaScript》4-8章" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/30/读书笔记 — 《高性能JavaScript》4-8章/" class="article-date">
+  	<time datetime="2017-04-30T03:25:00.000Z" itemprop="datePublished">2017-04-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      读书笔记 — 《高性能JavaScript》4-8章
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高性能JavaScript/">高性能JavaScript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第4章-算法和流程控制"><a href="#第4章-算法和流程控制" class="headerlink" title="第4章 算法和流程控制"></a>第4章 算法和流程控制</h2><h3 id="内容："><a href="#内容：" class="headerlink" title="内容："></a>内容：</h3><p><strong>程序算法和流程优化</strong>，包括优化循环、递归等等</p>
+<a id="more"></a>
+<h3 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h3><p>-1. js有四种循环类型：<br><figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;&#125;；   <span class="comment">//初始化、前测条件、后执行体、循环体</span></div><div class="line"><span class="keyword">while</span>() &#123;&#125;   <span class="comment">//前侧条件、循环体</span></div><div class="line"><span class="keyword">do</span>&#123;&#125; <span class="keyword">while</span>();   <span class="comment">//循环体、后测条件</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> prop <span class="keyword">in</span> <span class="keyword">object</span>) &#123;&#125;</div></pre></td></tr></table></figure></p>
+<p>for-in循环所返回的对象包括实例属性和从原型链中继承的属性，它是四种循环中最慢的，大约只有其他类型速度的1/7；<br>-2.  优化循环有两种方式：<br>减少迭代工作量   -&gt;复杂度=0(n)时首选<br>减少迭代次数   -&gt;复杂度&gt;0(n)时首选<br>-3.  减少迭代工作量方法：<br>在初始化中将length保存为局部变量，例如：<code>for(let i=0, len=arr.length; i&lt;len; i++)</code><br>使用倒序循环，例如：<code>for(let i=10;i--;){}</code>，<code>while(j--){}</code>，每次循环减少一次控制条件判断（迭代次数少于上限？值是否为true？=&gt;值是否为true？）；<br>-4.  减少迭代次数方法：<br>“达夫设备”，每次循环执行多次操作，在迭代次数&gt;1000时考虑使用；<br>-5.  大多数情况switch比if-else更快，但只要当条件数量很大时才慢得明显。因为大多数语言对switch采用分支表索引进行优化，并且在js中在switch中使用全等操作符，不会发生类型转换；<br>-6.  条件语句选择：<br>离散值 =&gt; switch<br>多个值域 =&gt; if-else<br>大量离散值且条件和值存在映射关系 =&gt; 查找表（存入数组直接return）<br>-7.  优化if-else方法：最可能出现的条件放在首位，嵌套if-else（二分法）；<br>-8.  除IE的调用栈是与系统空闲内存有关，其他浏览器都有固定数量的调用栈限制；</p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>调用栈错误提示</th>
+<th>错误类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE</td>
+<td><code>Stack overflow at line x</code></td>
+<td>常规Error</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td><code>Too much recursion</code></td>
+<td>InternalError</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td><code>Maximum call stack size exceeded</code></td>
+<td>RangeError</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>不提示</td>
+<td>RangeError</td>
+</tr>
+<tr>
+<td>Opera</td>
+<td><code>Abort(control stack overflow)</code></td>
+<td>终止js引擎，不抛出错误</td>
+</tr>
+</tbody>
+</table>
+<p>-9.  两种递归模式：直接递归模式、隐伏模式；</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li>避免使用for-in循环，除非需要遍历一个属性数量未知的对象；</li>
+<li>改善循环的最佳方式是减少迭代工作量和减少迭代次数；</li>
+<li>在判断条件较多时，使用查找表比if-else和switch更快；</li>
+<li>使用递归时注意浏览器调用栈限制；</li>
+<li>遇到栈溢出错误时可将方法改为迭代算法，或用Memoization避免重复计算。</li>
+</ol>
+<h2 id="第5章-字符串和正则表达式"><a href="#第5章-字符串和正则表达式" class="headerlink" title="第5章 字符串和正则表达式"></a>第5章 字符串和正则表达式</h2><h3 id="内容：-1"><a href="#内容：-1" class="headerlink" title="内容："></a>内容：</h3><p><strong>字符串操作优化和正则表达式查找优化</strong>，包括优化字符串连接、正则匹配等等</p>
+<h3 id="知识点：-1"><a href="#知识点：-1" class="headerlink" title="知识点："></a>知识点：</h3><ol>
+<li>例如<code>str+=&#39;one&#39; + &#39;two&#39;</code>，js会创建一个临时字符串保存<code>one</code>和<code>two</code>的连接然后与<code>str</code>连接再赋值给<code>str</code>，例如使用<code>str=str + &#39;one&#39; + &#39;two&#39;</code>可以避免创建临时字符串，因为会从左至右依次连接，但是改变连接顺序例如<code>str=&#39;one&#39; + str + &#39;two&#39;</code>则优化失效；</li>
+<li>IE7及以前版本的字符串连接使用了非常糟糕的方法：每连接一对字符串都把它复制到一块新分配的内存中；IE8的实现则是：记录现有字符串的引用来构造新字符串，当需要使用时才将各部分逐个拷贝到一个新的字符串中，然后用它取代之前的字符串引用；</li>
+<li>Array.prototype.join方法在大多浏览器中比常规字符串连接更慢，但在IE7及更早版本中是一种优化手段；</li>
+<li>正则优化部分待续</li>
+</ol>
+<h2 id="第6章-快速响应的用户界面"><a href="#第6章-快速响应的用户界面" class="headerlink" title="第6章 快速响应的用户界面"></a>第6章 快速响应的用户界面</h2><h3 id="内容：-2"><a href="#内容：-2" class="headerlink" title="内容："></a>内容：</h3><p><strong>使用各种技术提升应用交互性</strong>，包括合理管理UI线程、使用Web Worker进行额外计算等等</p>
+<p>###知识点：</p>
+<ol>
+<li>用于执行js和更新UI的进程被称为“浏览器UI线程”，它的工作基于一个简单的队列系统，任务会被保存到队列中直到进程空闲；</li>
+<li>任务类型包括：运行js代码、执行UI更新；js执行期间不会更新UI，UI更新期间不会执行js；js与UI共享同一进程的部分原因是它们之间会频繁访问；</li>
+<li>浏览器对脚本运行的限制有：调用栈大小限制、运行时间限制，各浏览器的限制如下：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>限制类型</th>
+<th>修改方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE</td>
+<td>500万条语句</td>
+<td>修改注册表MaxScriptStatements字段</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>10秒</td>
+<td>修改浏览器配置，输入about:conf修改dom.max_script_run_time</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>5秒</td>
+<td>无法修改，可以禁用定时器</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>依赖通用崩溃检测系统处理</td>
+<td></td>
+</tr>
+<tr>
+<td>Opera</td>
+<td>无限制</td>
+</tr>
+</tbody>
+</table>
+<p>-4. 单个js操作花费总时间不应该超过100ms；<br>-5. 有些浏览器在js运行期间不会把UI更新任务加入队列，这是为了保证UI页面的动态变化，所以可能出现脚本运行期间点击按钮，无法看到它被按下的样式，但它的onlick事件处理器会被执行；<br>-6. 使用定时器管理UI线程：</p>
+<ul>
+<li>定时器从调用它时开始算，计时完成后被加入UI队列，但需要注意函数只有在创建它的函数执行完成之后才有可能被执行</li>
+<li>定时器会重置所有相关的浏览器限制，包括长时间运行脚本定时器，调用栈也会重置为0</li>
+<li>js定时器通常不太精确，相差大约几毫秒。因为例如windows系统定时器分辨率是15ms，即一个15ms的定时器会根据最后一次系统时间刷新而转换为0或15。最小值最好为25ms（实际时间15或30）以确保至少有15ms的延时，再小的延时对大多数UI更新会不够用<br>-7. 记录代码运行时间：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> start = +<span class="keyword">new</span> <span class="built_in">Date</span>(),</div><div class="line">	stop;</div><div class="line">process();</div><div class="line">stop = +<span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line"><span class="keyword">var</span> time = stop - start;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>-8. 当任务与UI无关且不能被分解时可考虑使用Worker<br>Web Worker运行环境：</p>
+<ul>
+<li>navigator，包含属性：appName、appVersion、user Agent、platform</li>
+<li>location，只读</li>
+<li>self，指向全局worker对象</li>
+<li>importScripts()，用来加载外部js文件，阻塞式，直到执行完成才继续</li>
+<li>所有ES对象，Object、Array、Date等</li>
+<li>XMLHttpRequest</li>
+<li>setTimeout()、setInterval()</li>
+<li>close()，终止Worker运行<br>-9. 使用Worker需要单独建立js文件然后使用：<code>var worker = new Worker(&#39;code.js&#39;)</code>，文件会异步下载，文件下载执行完成后才会启动此Worker；<br>-10. 主进程端：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> worker = <span class="keyword">new</span> Worker(<span class="string">'code.js'</span>);</div><div class="line">worker.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(e.data);</div><div class="line">&#125;</div><div class="line">worker.postMessage(<span class="string">"s"</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Worker端：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">self.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">	self.postMessage(e.data);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li>寻求运行速度和用户体验的平衡，当js任务执行超过100ms时，就应该考虑使用定时器或者Web Worker；</li>
+<li>可以将任务分解成一个一个的小块分别执行；</li>
+</ol>
+<h2 id="第7章-Ajax"><a href="#第7章-Ajax" class="headerlink" title="第7章 Ajax"></a>第7章 Ajax</h2><h3 id="内容：-3"><a href="#内容：-3" class="headerlink" title="内容："></a>内容：</h3><p><strong>使用各种技术提升应用交互性</strong>，包括合理管理UI线程、使用Web Worker进行额外</p>
+<h3 id="知识点：-2"><a href="#知识点：-2" class="headerlink" title="知识点："></a>知识点：</h3><p>1 向服务器请求数据的常用技术：</p>
+<ul>
+<li>XHR</li>
+<li>动态脚本注入</li>
+<li>Multipart XHR</li>
+<li>iframes</li>
+<li>Comet<br>2 GET请求具有幂等性，对服务器无副作用，经GET请求的数据会被缓存起来；<br>3 IE限制URL长度，当URL长度超过2048个字符（4k）时应使用POST；<br>4 可以使用“流”分段处理返回数据，低版本IE不支持“流”，也不提供readyState为3的状态；<br>5 使用动态脚本注入有很多限制，包括不能设置请求头，只能用GET，不能设置请求超时或重试，必须等所有数据返回才能访问等等，实现JSONP（JSON with padding）跨域：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//js端</span></div><div class="line"><span class="keyword">var</span> scriptEle = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">scriptEle.src = <span class="string">"url"</span>;</div><div class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(scriptEle);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">callBack</span>(<span class="params">jsonString</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> data = <span class="built_in">eval</span>(<span class="string">'('</span> + jsonString + <span class="string">')'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//服务端返回</span></div><div class="line">callBack(&#123;<span class="string">"status"</span>:<span class="number">1</span>, <span class="string">"data"</span>: <span class="number">2</span>&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>6 可以将参数以<code>var params = [&#39;key1=value1&#39;,&#39;key2=value2&#39;]</code>格式存为数组，最后params .join(‘&amp;’)拼接；<br>7 GET只发送一个数据包，而POST至少发送两个（请求头、请求正文），所以GET请求速度会更快；<br>8 向服务器发送数据技术：XHR、Beacons（信标）<br>9 Beacons实例：<code>(new Image()).src = url + &#39;?&#39; + params .join(&#39;&amp;&#39;);</code><br>是给服务器回传信息最有效的方式，性能消耗小且服务端错误不会影响客户端；<br>接收服务器返回数据：监听Image对象的load事件；检查服务器返回图片的宽高（如可以用宽1表示成功，2表示重试）；<br>10 XML优点：</p>
+<ul>
+<li>极佳的通用性，服务端和客户端都完美支持</li>
+<li>格式严格</li>
+<li>易于验证<br>但也存在过于冗长，语法模糊的问题，解析它也需要提前知道它的结构<br>11 XHR获取的JSON是字符串格式，而JSON-P本身就被当做JSON对象；<br>12 两种情形避免使用JSON-P，因为JSON-P必须是可执行js，可能被任何人调用并使用动态脚本注入技术插入任何网站；不能把敏感数据编码在JSON-P中，因为你无法确认它是否保持私有调用状态，即使带有随机URL和做了cookie判断；<br>13 最快的ajax请求就是没有请求，减少不必要请求方法：</li>
+<li>服务端，设置HTTP头信息确保响应被浏览器缓存（设置Expires头信息，GMT日期格式）</li>
+<li>客户端，把获取的信息存储到本地，避免再次请求<br>14 大多数浏览器支持XMLHttpRequest对象，老版本浏览器使用ActiveX对象，并需要传入版本号，通用获取xhr对象方法：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXhrObject</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> msxml_progid = [</div><div class="line">		<span class="string">'MSXML2.XMLHTTP.6.0'</span>,</div><div class="line">		<span class="string">'MSXML3.XMLHTTP'</span>,</div><div class="line">		<span class="string">'Microsoft.XMLHTTP'</span>,   <span class="comment">//不支持readyState 3</span></div><div class="line">		<span class="string">'MSXML2.XMLHTTP.3.0'</span>,   <span class="comment">//不支持readyState 3</span></div><div class="line">	];</div><div class="line">	<span class="keyword">var</span> req;</div><div class="line">	<span class="keyword">try</span>&#123;</div><div class="line">		req = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">catch</span>(e)&#123;</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, len = msxml_progid.length; i&lt;len; i++)&#123;</div><div class="line">			<span class="keyword">try</span>&#123;</div><div class="line">				req = <span class="keyword">new</span> ActiveXObject(msxml_progid[i]);</div><div class="line">				<span class="keyword">break</span>;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">catch</span>(e2)&#123;&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">finally</span>&#123;</div><div class="line">		<span class="keyword">return</span> req;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>15 各种交互手段比较：</p>
+<ul>
+<li>XML支持良好，但笨重且解析缓慢；JSON轻量级解析快，但需要编写额外的服务端构造程序；</li>
+<li>动态脚本注入允许跨域请求和本地执行js和JSON，但它的接口不安全，而且不能读取头信息或响应代码；</li>
+<li>Multipart XMR可以减少请求数并处理一个响应中的各种文件类型，但不能缓存接收到的响应</li>
+</ul>
+<h3 id="总结：-2"><a href="#总结：-2" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li>减少请求数，合并js和css文件或使用MXHR；</li>
+<li>页面主要内容加载完成后用ajax获取次要文件；</li>
+<li>确认代码错误不会输出给用户，并在服务端处理错误；</li>
+<li>可以使用ajax类库，但必要时可编写自己的底层ajax代码。</li>
+</ol>
+<h2 id="第8章-编程实践"><a href="#第8章-编程实践" class="headerlink" title="第8章 编程实践"></a>第8章 编程实践</h2><h3 id="内容：-4"><a href="#内容：-4" class="headerlink" title="内容："></a>内容：</h3><p><strong>一些编程中需要注意的优化细节</strong>，包括条件预加载、使用底层方法等等。</p>
+<h3 id="知识点：-3"><a href="#知识点：-3" class="headerlink" title="知识点："></a>知识点：</h3><p>1  传入字符串并动态执行的方法：eval()、Function()构造函数、setTimeout()、setInterval()；<br>2  每次调用eval()都要创建一个新的解释器实例；<br>3  避免重复的条件判断：延迟加载、条件预加载<br>当一个函数在页面中不会立刻调用时，延迟加载是最好的选择：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addHandler</span>(<span class="params">target, eventType, handler</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span>(target.addEventListener)&#123;</div><div class="line">		<span class="comment">//复写函数</span></div><div class="line">		addHandler = <span class="function"><span class="keyword">function</span>(<span class="params">target, eventType, handler</span>)</span>&#123;</div><div class="line">			target.addEventListener(eventType, handler, <span class="literal">false</span>);</div><div class="line">		&#125;</div><div class="line">	&#125;<span class="keyword">else</span>&#123;</div><div class="line">		addHandler = <span class="function"><span class="keyword">function</span>(<span class="params">target, eventType, handler</span>)</span>&#123;</div><div class="line">			target.attachEvent(<span class="string">"on"</span> + eventType, handler);	</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="comment">//调用新函数</span></div><div class="line">	addHandler(target, eventType, handler);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>条件预加载：函数定义时判定<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> addHandler = <span class="built_in">document</span>.body.addEventListener?</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">target, eventType, handler</span>)</span>&#123;</div><div class="line">		target.addEventListener(eventType, handler, <span class="literal">false</span>);</div><div class="line">	&#125;:</div><div class="line">	<span class="function"><span class="keyword">function</span>(<span class="params">target, eventType, handler</span>)</span>&#123;</div><div class="line">		target.attachEvent(<span class="string">"on"</span> + eventType, handler);	</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>4 js引擎是由低级语言构建的而且经过编译，使用位操作符和原生方法例如Math中的方法和querySelectorAll()速度更快；<br>5 位操作符应用：<code>i&amp;1</code>可以判断奇偶，奇时返回true，偶时返回false</p>
+<h3 id="总结：-3"><a href="#总结：-3" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li>避免使用给eval()、Function()构造器、setTimeout()、setInterval()传入字符串来造成双重求值，因为创建新的解释器会带来性能损耗，setTimeout()和setInterval()应传递函数；</li>
+<li>尽量使用直接量创建对象和数组，直接量的创建和初始化比非直接量形式快；</li>
+<li>使用延迟加载和条件预加载避免重复的检测工作；</li>
+<li>进行数学运算时考虑使用直接操作数字的二进制形式的位运算，尽量使用原生方法。</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/05/读书笔记 —《JavaScript权威指南》/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          读书笔记 —《JavaScript权威指南》
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/27/读书笔记 — 《高性能JavaScript》1-3章/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">读书笔记 — 《高性能JavaScript》1-3章</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="读书笔记 — 《高性能JavaScript》4-8章" data-title="读书笔记 — 《高性能JavaScript》4-8章" data-url="http://yoursite.com/2017/04/30/读书笔记 — 《高性能JavaScript》4-8章/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 蒋子珑
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

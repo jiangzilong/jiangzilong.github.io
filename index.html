@@ -115,7 +115,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/Excel上传/" style="font-size: 10px;">Excel上传</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/LiveEdit/" style="font-size: 10px;">LiveEdit</a> <a href="/tags/NPOI/" style="font-size: 10px;">NPOI</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 20px;">css</a> <a href="/tags/html5/" style="font-size: 16.67px;">html5</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/js/" style="font-size: 13.33px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/元素对齐/" style="font-size: 10px;">元素对齐</a> <a href="/tags/树莓派3/" style="font-size: 10px;">树莓派3</a>
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/Excel上传/" style="font-size: 10px;">Excel上传</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/JavaScript权威指南/" style="font-size: 10px;">JavaScript权威指南</a> <a href="/tags/LiveEdit/" style="font-size: 10px;">LiveEdit</a> <a href="/tags/NPOI/" style="font-size: 10px;">NPOI</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/事件监听/" style="font-size: 10px;">事件监听</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/元素对齐/" style="font-size: 10px;">元素对齐</a> <a href="/tags/树莓派3/" style="font-size: 10px;">树莓派3</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a> <a href="/tags/高性能JavaScript/" style="font-size: 12.5px;">高性能JavaScript</a>
 					</div>
 				</section>
 				
@@ -189,11 +189,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-JS中彻底删除json对象组成的数组中的元素" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-读书笔记 —《JavaScript权威指南》" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/12/08/JS中彻底删除json对象组成的数组中的元素/" class="article-date">
-  	<time datetime="2016-12-08T07:34:00.000Z" itemprop="datePublished">2016-12-08</time>
+      <a href="/2017/05/05/读书笔记 —《JavaScript权威指南》/" class="article-date">
+  	<time datetime="2017-05-05T11:43:00.000Z" itemprop="datePublished">2017-05-05</time>
 </a>
     </div>
   
@@ -204,7 +204,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/08/JS中彻底删除json对象组成的数组中的元素/">JS中彻底删除json对象组成的数组中的元素</a>
+      <a class="article-title" href="/2017/05/05/读书笔记 —《JavaScript权威指南》/">读书笔记 —《JavaScript权威指南》</a>
     </h1>
   
 
@@ -213,24 +213,364 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>只是分享一个小知识~</p><br><p>在JS中，对于某个由json对象组成的数组，例如：</p>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> test = [&#123; <span class="string">"a"</span>: <span class="string">"1"</span>, <span class="string">"b"</span>: <span class="string">"2"</span> &#125;, &#123; <span class="string">"a"</span>: <span class="string">"3"</span>, <span class="string">"b"</span>: <span class="string">"4"</span> &#125;, &#123; <span class="string">"a"</span>: <span class="string">"5"</span>, <span class="string">"b"</span>: <span class="string">"6"</span> &#125;];</div></pre></td></tr></table></figure>
-<p>如果我们想要删除其中的第二个json对象，应该怎么做呢？其实方法和操作数组完全相同。</p><br>
+        <p><img src="https://ooo.0o0.ooo/2017/06/15/5942203094d16.jpg" alt="这里写图片描述"></p>
+<p>传说中的犀牛书，虽然后300页是参照本但真是超厚的硬货！不少人评论就是一本字典~ 我买的是第六版，内容都是JS基础知识，因为出版日期较早所以大多参照ES3/ES5标准。会在这儿记录下自己关注的一些知识点和总结。</p>
       
     </div>
     
     <div class="article-info article-info-index">
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript权威指南/">JavaScript权威指南</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
 	</div>
 
       
 
       
         <p class="article-more-link">
-          <a  href="/2016/12/08/JS中彻底删除json对象组成的数组中的元素/#more">more >></a>
+          <a  href="/2017/05/05/读书笔记 —《JavaScript权威指南》/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-读书笔记 — 《高性能JavaScript》4-8章" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/30/读书笔记 — 《高性能JavaScript》4-8章/" class="article-date">
+  	<time datetime="2017-04-30T03:25:00.000Z" itemprop="datePublished">2017-04-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/30/读书笔记 — 《高性能JavaScript》4-8章/">读书笔记 — 《高性能JavaScript》4-8章</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第4章-算法和流程控制"><a href="#第4章-算法和流程控制" class="headerlink" title="第4章 算法和流程控制"></a>第4章 算法和流程控制</h2><h3 id="内容："><a href="#内容：" class="headerlink" title="内容："></a>内容：</h3><p><strong>程序算法和流程优化</strong>，包括优化循环、递归等等</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高性能JavaScript/">高性能JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/04/30/读书笔记 — 《高性能JavaScript》4-8章/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-读书笔记 — 《高性能JavaScript》1-3章" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/27/读书笔记 — 《高性能JavaScript》1-3章/" class="article-date">
+  	<time datetime="2017-04-27T10:12:00.000Z" itemprop="datePublished">2017-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/27/读书笔记 — 《高性能JavaScript》1-3章/">读书笔记 — 《高性能JavaScript》1-3章</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="读书笔记系列-—-《高性能JavaScript》"><a href="#读书笔记系列-—-《高性能JavaScript》" class="headerlink" title="读书笔记系列 — 《高性能JavaScript》"></a>读书笔记系列 — 《高性能JavaScript》</h1><p><img src="http://img.blog.csdn.net/20170501213919934?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种常用的性能测试分析工具。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高性能JavaScript/">高性能JavaScript</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/04/27/读书笔记 — 《高性能JavaScript》1-3章/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-linus系统下使用hexo搭建个人博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/25/linus系统下使用hexo搭建个人博客/" class="article-date">
+  	<time datetime="2017-04-25T09:12:00.000Z" itemprop="datePublished">2017-04-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/25/linus系统下使用hexo搭建个人博客/">linus系统下使用hexo搭建个人博客</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在搭建自己的个人网站，准备在上面内置一个博客模块，把之前或者以后杂七杂八的总结都放里边。</p>
+<p>大致查了一下在WordPress和Hexo间选用了Hexo，体量较小一点。</p>
+<p>先贴上Hexo的官方文档：<a href="https://hexo.io/zh-cn/docs/index.html">Hexo安装文档</a></p>
+<p><br /></p>
+<p>首先在使用Hexo之前需要在服务器上安装</p>
+<ul>
+<li>Node.js</li>
+<li>Git</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/04/25/linus系统下使用hexo搭建个人博客/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-iframe监听鼠标点击事件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/18/iframe监听鼠标点击事件/" class="article-date">
+  	<time datetime="2017-04-18T04:11:00.000Z" itemprop="datePublished">2017-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/18/iframe监听鼠标点击事件/">iframe监听鼠标点击事件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="iframe监听鼠标点击事件"><a href="#iframe监听鼠标点击事件" class="headerlink" title="iframe监听鼠标点击事件"></a>iframe监听鼠标点击事件</h1><hr>
+<p>需要实现的页面逻辑是：</p>
+<ol>
+<li>点击父窗体中按钮，显示侧边栏；</li>
+<li>点击页面其他区域（iframe）可以隐藏侧边栏</li>
+</ol>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iframe/">iframe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件监听/">事件监听</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/04/18/iframe监听鼠标点击事件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-CSS像素、设备独立像素、设备像素之间关系" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/12/CSS像素、设备独立像素、设备像素之间关系/" class="article-date">
+  	<time datetime="2017-04-12T08:48:00.000Z" itemprop="datePublished">2017-04-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/12/CSS像素、设备独立像素、设备像素之间关系/">CSS像素、设备独立像素、设备像素之间关系</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSS像素、设备独立像素、设备像素，三者联系紧密又有很大的区别，而我们主要是在做移动端开发的时候需要更多地用到这些概念，那他们分别是指什么呢？</p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><strong>CSS像素（CSS Pixel）：</strong><br>适用于web编程，指的是我们在样式代码中使用到的逻辑像素，是一个抽象概念，实际并不存在</p>
+<p><strong>设备独立像素（Device Independent Pixel）：</strong><br>与设备无关的逻辑像素，代表可以通过程序控制使用的虚拟像素，是一个总体概念，包括了CSS像素</p>
+<p><strong>设备像素（Device Pixel）：</strong><br>物理像素，设备能控制显示的最小单位，我们常说的1920×1080像素分辨率就是用的设备像素单位</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/像素/">像素</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/04/12/CSS像素、设备独立像素、设备像素之间关系/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-JS中深拷贝数组、对象、对象数组方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/03/07/JS中深拷贝数组、对象、对象数组方法/" class="article-date">
+  	<time datetime="2017-03-07T04:24:00.000Z" itemprop="datePublished">2017-03-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/07/JS中深拷贝数组、对象、对象数组方法/">JS中深拷贝数组、对象、对象数组方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们在JS程序中需要进行频繁的变量赋值运算，对于字符串、布尔值等可直接使用赋值运算符 “=” 即可，但是对于数组、对象、对象数组的拷贝，我们需要理解更多的内容。</p>
+<p>首先，我们需要了解JS的浅拷贝与深拷贝的区别。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/深拷贝/">深拷贝</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/03/07/JS中深拷贝数组、对象、对象数组方法/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -300,334 +640,10 @@
 
 
   
-    <article id="post-IntelliJ IDEA 使用 LiveEdit 插件实现实时可视化前端开发" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/11/26/IntelliJ IDEA 使用 LiveEdit 插件实现实时可视化前端开发/" class="article-date">
-  	<time datetime="2016-11-26T03:47:00.000Z" itemprop="datePublished">2016-11-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/26/IntelliJ IDEA 使用 LiveEdit 插件实现实时可视化前端开发/">IntelliJ IDEA 使用 LiveEdit 插件实现实时可视化前端开发</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前因为公司很多都是C#后台项目，所以一直用的Visual Studio开发。而在VS里会自带实时刷新功能，即：在IDE中修改的CSS代码会同步反映在页面上，而不用我们手动F5刷新。</p><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IntelliJ-IDEA/">IntelliJ IDEA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LiveEdit/">LiveEdit</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/11/26/IntelliJ IDEA 使用 LiveEdit 插件实现实时可视化前端开发/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-JS异步上传Excel并使用NPOI进行读写操作" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/10/18/JS异步上传Excel并使用NPOI进行读写操作/" class="article-date">
-  	<time datetime="2016-10-18T02:26:00.000Z" itemprop="datePublished">2016-10-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/18/JS异步上传Excel并使用NPOI进行读写操作/">JS异步上传Excel 并使用NPOI进行读写操作</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span style="font-family: &quot;Microsoft YaHei&quot;; font-size: 14pt; color: #008000"><span style="font-family: &quot;Microsoft YaHei&quot;">实现功能</span></span></p>
-<p><hr><br><span style="font-family: &quot;Microsoft YaHei&quot;"><span style="font-family: &quot;Microsoft YaHei&quot;"><span style="font-size: 16px"><span style="color: #993300">导入</span>——客户端使用 ajaxfileupload.js 插件实现Excel的异步上传，并在服务端解析成JSON字符串返回页面</span><br><span style="font-family: &quot;Microsoft YaHei&quot;"><span style="font-family: &quot;Microsoft YaHei&quot;"><span style="font-size: 16px"><span style="color: #993300">导出</span>——将页面中的grid表拼接成JSON串上传至服务器，在服务端新建Excel并将数据导入，随后返回url给用户下载</span><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Excel上传/">Excel上传</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NPOI/">NPOI</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/10/18/JS异步上传Excel并使用NPOI进行读写操作/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-树莓派3（Raspbain系统）安装-net环境" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/27/树莓派3（Raspbain系统）安装-net环境/" class="article-date">
-  	<time datetime="2016-09-27T07:41:00.000Z" itemprop="datePublished">2016-09-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/27/树莓派3（Raspbain系统）安装-net环境/">树莓派3（Raspbain系统）安装.net环境</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>因为公司之前做的网站项目都是基于微软的.net平台，现在需要在树莓派3上测试它是否能负载起正常的访问请求。最开始直接的想到微软3月份刚发布针对于树莓派3的win10系统，其实说是win10,也就是一个超级精简的嵌入式系统，不过看支持列表里包括win10，所以就打算先试一试。</p><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/net/">.net</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/树莓派3/">树莓派3</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/09/27/树莓派3（Raspbain系统）安装-net环境/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-CSS3实现鼠标悬停扩展效果" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/23/CSS3实现鼠标悬停扩展效果/" class="article-date">
-  	<time datetime="2016-08-23T07:47:00.000Z" itemprop="datePublished">2016-08-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/23/CSS3实现鼠标悬停扩展效果/">CSS3实现鼠标悬停扩展效果</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span style="font-size: 16px;">我们在做导航标签的时候，有时会出现空间过于拥挤需要隐藏部分内容的情况，所以在这里我自己写了一个鼠标悬停显示扩展内容的效果，如下图所示。</span></p><br><p><span style="font-size: 16px;"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/984702/201608/984702-20160823152911948-1947395348.gif" alt="" /></span></p><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/23/CSS3实现鼠标悬停扩展效果/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-CSS伪类:first-child与:first-of-type的异同" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/09/CSS伪类:first-child与:first-of-type的异同/" class="article-date">
-  	<time datetime="2016-08-09T08:36:04.000Z" itemprop="datePublished">2016-08-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/09/CSS伪类:first-child与:first-of-type的异同/">CSS伪类:first-child与:first-of-type的异同</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><div id="cnblogs_post_body"><p><span style="font-size: 16px;">CSS里关于元素匹配里面有两个非常类似却又不尽相同的选择器，伪类&nbsp;</span><span style="font-size: 18px; color: #008000;">:first-child&nbsp;</span><span style="font-size: 16px;">和&nbsp;</span><span style="font-size: 18px; color: #008000;">:first-of-type</span><span style="font-size: 16px;"><br /></span></p></p>
-<p><span style="font-size: 16px;">两者在匹配方式上有很大差异，其实在一开始自己也没去注意这个细节，直到上次一个同事遇到同级元素匹配失败的问题后才发现原来以前的理解都不正确。</span></p><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/09/CSS伪类:first-child与:first-of-type的异同/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-几个单元素Loading动画解构" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/09/几个单元素Loading动画解构/" class="article-date">
-  	<time datetime="2016-08-09T08:36:04.000Z" itemprop="datePublished">2016-08-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/09/几个单元素Loading动画解构/">几个单元素Loading动画解构</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span style="font-size: 18px;">这个账号建了也有1个多月，拖延症患者终于下定决心开始写博。做前端从前至后差不多1年时间，如果文中有什么纰漏欢迎指出，未来的路还很长~</span></p>
-<p><img style="width:100px;" src="http://images2015.cnblogs.com/blog/984702/201608/984702-20160809163924356-1369553483.jpg" /></p>
-<p><span style="font-size: 18px;">第一篇文章用来解构几个挺不错的单元素Loading动画。效果图如下：</span><br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/09/几个单元素Loading动画解构/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">

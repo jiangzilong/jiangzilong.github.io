@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>读书笔记 — 《高性能JavaScript》1-3章 | 蒋子珑的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="读书笔记系列 — 《高性能JavaScript》
+刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读书笔记 — 《高性能JavaScript》1-3章">
+<meta property="og:url" content="http://yoursite.com/2017/04/27/读书笔记 — 《高性能JavaScript》1-3章/index.html">
+<meta property="og:site_name" content="蒋子珑的博客">
+<meta property="og:description" content="读书笔记系列 — 《高性能JavaScript》
+刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种">
+<meta property="og:image" content="http://img.blog.csdn.net/20170501213919934?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-06-15T06:09:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读书笔记 — 《高性能JavaScript》1-3章">
+<meta name="twitter:description" content="读书笔记系列 — 《高性能JavaScript》
+刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170501213919934?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+  
+    <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="/img/logo1.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">蒋子珑</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">保持渴望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://www.jiangzilong.com">主页</a></li>
+				        
+							<li><a href="/">博客主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/Excel上传/" style="font-size: 10px;">Excel上传</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/JavaScript权威指南/" style="font-size: 10px;">JavaScript权威指南</a> <a href="/tags/LiveEdit/" style="font-size: 10px;">LiveEdit</a> <a href="/tags/NPOI/" style="font-size: 10px;">NPOI</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/事件监听/" style="font-size: 10px;">事件监听</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/元素对齐/" style="font-size: 10px;">元素对齐</a> <a href="/tags/树莓派3/" style="font-size: 10px;">树莓派3</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a> <a href="/tags/高性能JavaScript/" style="font-size: 12.5px;">高性能JavaScript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jiangzilong.com/">蒋子珑的个人小站主页</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme" class="switch-aboutme">希望不断成长，变得和身边的人一样优秀</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">蒋子珑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/logo1.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">蒋子珑</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">保持渴望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://www.jiangzilong.com">主页</a></li>
+		        
+					<li><a href="/">博客主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-读书笔记 — 《高性能JavaScript》1-3章" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/27/读书笔记 — 《高性能JavaScript》1-3章/" class="article-date">
+  	<time datetime="2017-04-27T10:12:00.000Z" itemprop="datePublished">2017-04-27</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      读书笔记 — 《高性能JavaScript》1-3章
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高性能JavaScript/">高性能JavaScript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="读书笔记系列-—-《高性能JavaScript》"><a href="#读书笔记系列-—-《高性能JavaScript》" class="headerlink" title="读书笔记系列 — 《高性能JavaScript》"></a>读书笔记系列 — 《高性能JavaScript》</h1><p><img src="http://img.blog.csdn.net/20170501213919934?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种常用的性能测试分析工具。</p>
+<a id="more"></a>
+<p>需要说明的是优化的目的不仅仅是追求极致的代码运行速度，有时候我们也需要在性能和体验上做出均衡，毕竟web应用的最终目的是更好的用户体验。<br>这本书只有200页内容，但结构紧凑描述详尽，基本都会给出优化的实例，并对程序进行分析，包括很多非常有用的知识点，值得珍藏。</p>
+<p>在这里会总结此书的梗概和自己的心得，所以具体的编程实践部分大家还是得参考实际内容哦~</p>
+<h2 id="第1章-加载和执行"><a href="#第1章-加载和执行" class="headerlink" title="第1章 加载和执行"></a>第1章 加载和执行</h2><h3 id="内容："><a href="#内容：" class="headerlink" title="内容："></a>内容：</h3><p><strong>页面代码载入结构优化</strong>，包括怎么引入JS脚本，怎么组织脚本等等</p>
+<p>###知识点：</p>
+<ol>
+<li>不要把内嵌脚本放在引用外链样式表的<code>&lt;link&gt;</code>标签后，不然会导致阻塞页面等待样式表下载，以确保内嵌脚本在执行时获得最准确的样式信息；</li>
+<li>async和defer属性都用于异步加载脚本，都是并行加载，只是执行的时机不同，async在加载完成后即执行，defer则需要等待页面结构解析完成；</li>
+<li>对于支持HTML5的浏览器可以使用<code>document.head</code>替代<code>document.getElementsByTagName(&#39;head&#39;)[0]</code></li>
+<li>在使用动态脚本注入时，在所有主流浏览器中只有Firefox和Opera能保证按程序制定的顺序执行，其他浏览器会根据服务端返回的顺序执行代码，可以使用回调方式解决；</li>
+<li>通过监听XHR对象readyState判断返回状态，HTTP状态码中，2××表示有效响应，304表示从缓存读取</li>
+</ol>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li>将js外链脚本的引入放在<code>&lt;body&gt;</code>标签的最后，因为在解析完<code>&lt;head&gt;</code>之前浏览器不会渲染页面，这就会造成页面的卡顿，也避免在DOM未解析完成造成程序错误；</li>
+<li>合并js文件，这个不必说，毕竟优化首要考虑减少HTTP请求；</li>
+<li>提出几种无阻塞加载脚本方法：</li>
+</ol>
+<ul>
+<li>使用<code>script</code>标签的defer属性，指明脚本不会修改DOM，脚本会在所有元素解析完成之后，<code>window.onload</code>事件触发之前执行；</li>
+<li>使用动态脚本注入，即在js中新建<code>&lt;script&gt;</code>元素并设置src；</li>
+<li>使用XMLHttpRequest下载脚本并注入</li>
+</ul>
+<h2 id="第2章-数据存取"><a href="#第2章-数据存取" class="headerlink" title="第2章 数据存取"></a>第2章 数据存取</h2><h3 id="内容：-1"><a href="#内容：-1" class="headerlink" title="内容："></a>内容：</h3><p><strong>js代码数据存取部分优化</strong>，包括局部变量缓存，优化作用域链等等</p>
+<h3 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h3><ol>
+<li>js中有四种数据存取位置：<strong>字面量、本地变量、数组元素、对象成员</strong>，对字面量和本地变量的访问速度快于数组项和对象成员；</li>
+<li>每个函数都表示为一个对象（Function对象的实例），拥有一个内部属性<code>[[Scope]]</code>，指代函数的作用域链；</li>
+<li>函数创建时，作用域链被创建此函数的作用域中可访问的数据对象所填充，例如全局函数则填充window对象；</li>
+<li>函数运行时，会创建一个临时的<strong>执行环境</strong>，每次执行时的执行环境都是独一无二的，函数执行完毕，执行环境即被摧毁；</li>
+<li>当执行环境被创建时，它的作用域链被初始化为当前运行函数的<code>[[Scope]]</code>属性中的对象，之后创建<strong>活动对象</strong>，包括<strong>所有局部变量、命名参数、参数集合、this</strong>，随后被推入作用域链最前端；</li>
+<li>正常来说函数运行完成，执行环境被销毁，活动对象也被销毁，但在闭包中如果闭包引用了外层函数的变量会导致外层函数的活动对象处于被引用状态而无法被销毁，会导致更多的内存开销；</li>
+<li>js中有三种构造对象的方法：</li>
+</ol>
+<ul>
+<li>对象字面量 <code>var obj = { a: 1 }；</code></li>
+<li>构造函数<br><code>function f() { this.a = 1; }; var obj = new f();</code></li>
+<li>Object.create<br><code>var obj = { a: 1 }; var _obj = Object.create(obj);</code></li>
+</ul>
+<ol>
+<li>js中对象是基于原型的，原型不等同于类，类定义创建新对象的过程，而原型对象为所有对象实例所共享。例如Java中的类实例化之后就作为一个单独实例存在，而js的实例对象通过改变原型可以同步修改实例的原型属性；</li>
+<li>对象中有两种成员类型：实例成员、原型成员；<br><code>var father= function() { this.a = 1; }
+father.prototype.b = 2;</code></li>
+<li>js中有两种继承模式：类式继承、原型继承；</li>
+<li>类式继承继承对象的实例成员，原型继承继承对象的原型成员，原型成员被所有采用原型继承的对象共享，实例成员则不是；</li>
+<li>类式继承使用call、apply改变this实现，例：<br><code>var child = function() { this.c = 3; father.call(this); }</code><br>原型继承通过在对象原型上挂在实例实现，例：<br><code>child.prototype = new father();</code><br>也可以组合两种继承模式实现更复杂的继承</li>
+<li>js原型有两种模式：隐式原型（<code>__proto__</code>）、显式原型（<code>prototype</code>）</li>
+<li>每个函数在创建后将拥有一个prototype属性，指向函数的原型对象（通过Funtion.prototype.bind构造的函数没有）；所有对象都有<code>__proto__</code>属性，通过隐式原型可以查找原型链</li>
+<li>它们两者的关系有一点是：<code>__proto__</code>指向构造这个对象的函数的<code>prototype</code>，例如<code>function f(){} var obj = new f();</code> 则<code>obj.__proto__ === f.prototype</code>；</li>
+<li>所有对象的原型最终都指向Object对象，Object对象的<code>__proto__</code>的值为null；</li>
+<li>属性搜索方法：obj.hasOwnProperty(“key”)和key in obj，前者只搜索实例属性，后者会搜索实例属性和原型属性；</li>
+<li>题外：两种函数声明方式 — function f() {} 和 var f = function() {} 区别在于前者在程序解释期间就被初始化了，我们可以在它之前调用，而后者必须在调用时才会初始化，如果提前调用会提示undefined；</li>
+<li>在大多浏览器中获取属性时，点表示法（obj.key）和括号表示法（obj[“key”]）差别不大，只是在safari中点表示法会更快；</li>
+<li>如果用局部变量保存对象成员方法，会使方法的this指向全局对象</li>
+</ol>
+<h3 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li>用局部变量来存储需要多次访问的对象成员，因为局部变量处于作用域链的最顶端，访问速度最快，而例如全局变量处于最末位置，访问速度很慢，可以用这种方法避免每次属性读取都要遍历作用域链；</li>
+<li>with，try-catch会改变作用域链，降低原有属性的访问速度，应该谨慎使用；</li>
+<li>嵌套对象成员会降低访问速度，尽量少用</li>
+</ol>
+<h2 id="第3章-DOM编程"><a href="#第3章-DOM编程" class="headerlink" title="第3章 DOM编程"></a>第3章 DOM编程</h2><h3 id="内容：-2"><a href="#内容：-2" class="headerlink" title="内容："></a>内容：</h3><p><strong>DOM交互结构优化</strong>，包括降低DOM访问次数，减少重排重绘等等</p>
+<h3 id="知识点：-1"><a href="#知识点：-1" class="headerlink" title="知识点："></a>知识点：</h3><p>-1. 文档对象模型（DOM）是一个独立于语言，用于操作HTML和XML的API，虽然与语言无关，但它在浏览器中使用js来实现；<br>W3C对DOM的定义：</p>
+<blockquote>
+<p>一个与系统平台和变成语言无关的接口，程序和脚本可以通过这个接口动态地访问和修改文档的内容，结构，样式</p>
+</blockquote>
+<p>-2.  浏览器中的DOM部分和js部分通常是独立实现的，各浏览器关系表如下</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>js实现</th>
+<th>DOM实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IE</td>
+<td>Jscript</td>
+<td>Trident</td>
+</tr>
+<tr>
+<td>Firefox</td>
+<td>SpiderMonkey/TraceMonkey/JagerMonkey</td>
+<td>Gecko</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>V8</td>
+<td>WebCore(Webkit)</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>JavascriptCore</td>
+<td>WebCore(Webkit)</td>
+</tr>
+</tbody>
+</table>
+<p>-3. 因为两者独立实现，所以用js访问DOM时速度会非常慢<br>-4.  DOM是文档对象模型，用于提供操作文档的接口，例如document就是其中一个对象；BOM是浏览器对象模型，用于控制浏览器行为，例如window和location就是BOM里的对象；<br>-5.  使用非标准的innerHTML和类似document.createElement()的原生DOM方法，效率相差不大，但在老版本IE下以字符串拼接形式使用innerHTML效率低下（因为老版IE会对每一次拼接分配内存区域），可以将字符串片段存入数组之后用join()方法合并；<br>-6.  HTMLCollection与NodeList对象都是类数组对象，区别在于前者只包含页面元素，而后者包含元素和文本节点；<br>-7.  DOM的初衷是为解析XML，之后沿用到HTML上，标注分为两部分，一部分是Core，提供最基础的XML解释API说明；另一部分是HTML。NodeList接口说明在Core中体现，HTMLCollection接口在HTML中体现。在之前的标准中类似document.getElementsByTagName这种方法返回的是NodeList对象，因为这是在Core里的，但是现在的标准都返回HTML集合，除了document.querySelectorAll返回的NodeList对象是静态，其他方法基本都是实时对象，下面是大致的关系表（注：把document.getElementById也加上了，其实这个返回的是单个对象，比如div元素是HTMLDivElement，a元素是HTMLAnchorElement）</p>
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>返回对象</th>
+<th>实时/静态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document.getElementById</td>
+<td>HTML**Element</td>
+<td>静态</td>
+</tr>
+<tr>
+<td>document.getElementsByTayName</td>
+<td>HTMLCollection</td>
+<td>实时</td>
+</tr>
+<tr>
+<td>document.getElementsByClassName</td>
+<td>HTMLCollection</td>
+<td>实时</td>
+</tr>
+<tr>
+<td>document.images</td>
+<td>HTMLCollection</td>
+<td>实时</td>
+</tr>
+<tr>
+<td>document.links</td>
+<td>HTMLCollection</td>
+<td>实时</td>
+</tr>
+<tr>
+<td>document.anchors</td>
+<td>HTMLCollection</td>
+<td>实时</td>
+</tr>
+<tr>
+<td>document.forms</td>
+<td>HTMLCollection</td>
+<td>实时</td>
+</tr>
+<tr>
+<td>node.children</td>
+<td>HTMLCollection</td>
+<td>实时</td>
+</tr>
+<tr>
+<td>node.childNodes</td>
+<td>NodeList</td>
+<td>实时</td>
+</tr>
+<tr>
+<td>document.querySelectorAll</td>
+<td>NodeList</td>
+<td>静态</td>
+</tr>
+</tbody>
+</table>
+<p>-8.  Document、Element、Text都是Node的子类，查看一个页面元素的原型链可以看到：<br><code>document __proto__-&gt;HTMLDocument-&gt;Document-&gt;Node-&gt;EventTarget-&gt;Object</code><br><code>&lt;a&gt;元素 __proto__-&gt;HTMLAnchiorElement-&gt;HTMLElement-&gt;Element-&gt;Node-&gt;EventTarget-&gt;Object</code><br><code>文本节点 __proto__-&gt;Text-&gt;CharacterData-&gt;Node-&gt;EventTarget-&gt;Object</code><br>-9.  HTML集合始终与文档保持着连接，每次需要最新信息时，都会重复执行查询过程，哪怕只是访问集合length属性，都会触发集合进行更新；<br>-10. 有的节点访问方法会跳过文本注释等类型的节点，有的则不会，如下表：</p>
+<table>
+<thead>
+<tr>
+<th>只返回元素节点</th>
+<th>返回所有节点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>children</td>
+<td>childNodes</td>
+</tr>
+<tr>
+<td>chilidElementCount</td>
+<td>childNodes.length</td>
+</tr>
+<tr>
+<td>firstElementChild</td>
+<td>firstChild</td>
+</tr>
+<tr>
+<td>lastElementChild</td>
+<td>lastChild</td>
+</tr>
+<tr>
+<td>nextElementSibling</td>
+<td>nextSibling</td>
+</tr>
+<tr>
+<td>previousElementSibling</td>
+<td>previousSibling</td>
+</tr>
+</tbody>
+</table>
+<p>-11.  document.querySelectorAll返回的NodeList对象不包含文本注释等其他类型的节点；<br>-12.  浏览器下载完页面的所有组件——HTML标记、js、css、图片——之后会解析生成两个内部数据结构：DOM树、渲染树。DOM树表示页面结构，渲染树表示DOM节点如何显示，构建完成之后，浏览器就会开始绘制页面元素；<br>-13.  <strong>重排</strong> ——DOM变化→元素几何属性或位置变化→该部分渲染树失效→重构渲染树<br> <strong>重绘</strong> ——重排完成→浏览器重新绘制受影响部分<br>-14. 滚动条出现会触发整个页面重排<br>-15. 由于每次重排都会产生计算消耗，大多浏览器通过队列化修改并批量执行来优化重排过程。获取布局信息（offsetWidth、scrollWidth、clientWidth）会导致处于渲染队列中的“待处理变化”立即刷新，即使这些信息最近未发生改变；<br>-16. 使用<code>el.style.cssText += &#39;&#39;</code>可以避免覆盖之前的样式；<br>-17. 当元素操作会触发2次以上重拍时，可以先将元素脱离文档流，修改后再带回文档中，脱离文档流的方法有：隐藏元素、使用文档片段、克隆节点；<br>-18. 文档片段是轻量级的document对象，原型链是<code>DocumentFragment-&gt;Node-&gt;EventTarget-&gt;Object</code>，设计初衷是为了完成节点的更新和移动，执行append操作被加入的片段的子节点而不是其本身（可以认为它只是一个临时的容器）；<br>-19. 浏览器会跟踪每个事件处理器，这会占用很多内存，可以使用事件代理优化；<br>-20. 标准事件模型：捕获→到达目标→冒泡，IE事件模型不支持捕获，两者的对应关系如下表：</p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>标准事件模型</th>
+<th>IE8及以下事件模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>绑定</td>
+<td>addEventListener(e,f,useCapture)</td>
+<td>attachEvent(e,f)</td>
+</tr>
+<tr>
+<td>解绑</td>
+<td>removeEventListener</td>
+<td>detachEvent</td>
+</tr>
+<tr>
+<td>事件对象</td>
+<td>e</td>
+<td>window.event(以下用e表示)</td>
+</tr>
+<tr>
+<td>目标元素</td>
+<td>e.target</td>
+<td>e.srcElement</td>
+</tr>
+<tr>
+<td>阻止默认操作</td>
+<td>e.preventDefault()</td>
+<td>e.returnValue = false</td>
+</tr>
+<tr>
+<td>阻止冒泡</td>
+<td>e.stopPropogation()</td>
+<td>e.cancelBubble = true</td>
+</tr>
+<tr>
+<td>捕获阶段</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+</tbody>
+</table>
+<p>通用的事件方法示例：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/***** 事件绑定 *****/</span></div><div class="line"><span class="keyword">if</span>(<span class="built_in">document</span>.addEventListener) &#123;</div><div class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'click'</span>, handler, <span class="literal">false</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="built_in">document</span>.attachEvent(<span class="string">'click'</span>, handler);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/***** 处理函数 *****/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handler</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> e = e||<span class="built_in">window</span>.event;</div><div class="line">	<span class="keyword">var</span> target = e.target||e.srcElement;</div><div class="line">	...</div><div class="line">	if(e.preventDefault) &#123;</div><div class="line">		e.preventDefault();   <span class="comment">//阻止默认操作，例如点击form按钮自动submit</span></div><div class="line">		e.stopPropogation();   <span class="comment">//阻止冒泡</span></div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		e.returnValue = <span class="literal">false</span>;</div><div class="line">		e.cancelBubble = <span class="literal">true</span>;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/***** 事件解绑 *****/</span></div><div class="line"><span class="keyword">if</span>(<span class="built_in">document</span>.removeEventListener) &#123;</div><div class="line">	<span class="built_in">document</span>.removeEventListener(<span class="string">'click'</span>, handler, <span class="literal">false</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">	<span class="built_in">document</span>.detachEvent(<span class="string">'click'</span>, handler);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>IE从IE9开始也支持标准事件模型</p>
+<h3 id="总结：-2"><a href="#总结：-2" class="headerlink" title="总结："></a>总结：</h3><ol>
+<li>最小化DOM访问次数，尽可能在js端处理，必要时可以将节点保存为局部变量；</li>
+<li>注意HTMLCollection和NodeList的实时性，如果有必要可以使用<code>Array.prototype.slice.call(hc/nl, 0)</code>建立一个静态拷贝；</li>
+<li>减少重绘重排次数，需要多次修改时考虑“离线”操作DOM树，并减少访问布局信息的次数；</li>
+<li>多事件监听可以使用事件委托优化</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/30/读书笔记 — 《高性能JavaScript》4-8章/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          读书笔记 — 《高性能JavaScript》4-8章
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/25/linus系统下使用hexo搭建个人博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linus系统下使用hexo搭建个人博客</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="读书笔记 — 《高性能JavaScript》1-3章" data-title="读书笔记 — 《高性能JavaScript》1-3章" data-url="http://yoursite.com/2017/04/27/读书笔记 — 《高性能JavaScript》1-3章/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 蒋子珑
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
