@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端笔试面试题整理 | 蒋子珑的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="搜集一些自己觉得比较重要或者有趣的笔试面试知识点，跟大家分享一下。先放几个不错的链接：Web前端面试题目及答案汇总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端笔试面试题整理">
+<meta property="og:url" content="http://yoursite.com/2017/08/10/前端笔试面试题整理/index.html">
+<meta property="og:site_name" content="蒋子珑的博客">
+<meta property="og:description" content="搜集一些自己觉得比较重要或者有趣的笔试面试知识点，跟大家分享一下。先放几个不错的链接：Web前端面试题目及答案汇总">
+<meta property="og:image" content="http://img.blog.csdn.net/20170810220035229?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170810132247773?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170810220652691?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170810220937617?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170810221012396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20160521205928048?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://img.blog.csdn.net/20160521210645823?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
+<meta property="og:image" content="http://p.blog.csdn.net/images/p_blog_csdn_net/hytdsky/609806/o_2008111712242127.jpg">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/1089184/201701/1089184-20170118180823468-388996114.png">
+<meta property="og:image" content="https://pic1.zhimg.com/v2-e7a99fda571a4294e9b2196d58f8e65c_b.png">
+<meta property="og:image" content="http://img.blog.csdn.net/20150503171446137">
+<meta property="og:image" content="http://img.blog.csdn.net/20170810215258659?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170814204122123?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170815165701947?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170814224118255?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170814224421248?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-08-15T11:22:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端笔试面试题整理">
+<meta name="twitter:description" content="搜集一些自己觉得比较重要或者有趣的笔试面试知识点，跟大家分享一下。先放几个不错的链接：Web前端面试题目及答案汇总">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170810220035229?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+  
+    <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="/img/logo1.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">蒋子珑</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">保持渴望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://www.jiangzilong.com">主页</a></li>
+				        
+							<li><a href="/">博客主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/Excel上传/" style="font-size: 10px;">Excel上传</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/JavaScript权威指南/" style="font-size: 10px;">JavaScript权威指南</a> <a href="/tags/LiveEdit/" style="font-size: 10px;">LiveEdit</a> <a href="/tags/NPOI/" style="font-size: 10px;">NPOI</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/事件监听/" style="font-size: 10px;">事件监听</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/元素对齐/" style="font-size: 10px;">元素对齐</a> <a href="/tags/树莓派3/" style="font-size: 10px;">树莓派3</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/笔试面试/" style="font-size: 10px;">笔试面试</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/高性能JavaScript/" style="font-size: 12.5px;">高性能JavaScript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jiangzilong.com/">蒋子珑的个人小站主页</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme" class="switch-aboutme">希望不断成长，变得和身边的人一样优秀</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">蒋子珑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/logo1.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">蒋子珑</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">保持渴望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://www.jiangzilong.com">主页</a></li>
+		        
+					<li><a href="/">博客主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端笔试面试题整理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/10/前端笔试面试题整理/" class="article-date">
+  	<time datetime="2017-08-10T07:10:00.000Z" itemprop="datePublished">2017-08-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端笔试面试题整理
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔试面试/">笔试面试</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>搜集一些自己觉得比较重要或者有趣的笔试面试知识点，跟大家分享一下。<br>先放几个不错的链接：<br><a href="http://www.imooc.com/article/8201" target="_blank" rel="external">Web前端面试题目及答案汇总</a></p>
+<a id="more"></a>
+<p>###HTML/浏览器</p>
+<p>####1. 页面渲染过程<br><img src="http://img.blog.csdn.net/20170810220035229?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<blockquote>
+<p>a.  浏览器把获取到的HTML代码解析成1个DOM树，HTML中的每个tag都是DOM树中的1个节点，根节点就是我们常用的document对象。DOM树里包含了所有HTML标签，包括display:none隐藏，还有用JS动态添加的元素等。<br>b. 浏览器把所有样式(用户定义的CSS和用户代理)解析成样式结构体，在解析的过程中会去掉浏览器不能识别的样式，比如IE会去掉-moz开头的样式，而FF会去掉_开头的样式。<br>c. DOM Tree 和样式结构体组合后构建render tree, render tree类似于DOM tree，但区别很大，render tree能识别样式，render tree中每个NODE都有自己的style，而且 render tree不包含隐藏的节点 (比如display:none的节点，还有head节点)，因为这些节点不会用于呈现，而且不会影响呈现的，所以就不会包含到 render tree中。注意 visibility:hidden隐藏的元素还是会包含到 render tree中的，因为visibility:hidden 会影响布局(layout)，会占有空间。根据CSS2的标准，render tree中的每个节点都称为Box (Box dimensions)，理解页面元素为一个具有填充、边距、边框和位置的盒子。<br>d. 一旦render tree构建完毕后，浏览器就可以根据render tree来绘制页面了。</p>
+<p>####2. 重排（回流）、重绘<br>a. 当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为回流(reflow)。每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘。<br>b. 当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为重绘。<br>注意：回流必将引起重绘，而重绘不一定会引起回流。</p>
+<p>####3. 浏览器缓存策略</p>
+</blockquote>
+<hr>
+<p>###CSS</p>
+<p>####1、 <a>标签伪类定义顺序 ：link-&gt;:visited-&gt;:hover-&gt;:active</a></p>
+<p>####2、选择器优先级及权重计算方法<br>!important&gt;内联&gt;id&gt;class&gt;tag   “1111”格式</p>
+<p>####3、清楚浮动<br>（1）父级div定义height。<br>（2）结尾处加空div标签clear:both。<br>（3）父级div定义伪类:after和zoom。<br>（4）父级div定义overflow:hidden。<br>（5）父级div定义overflow:auto。<br>（6）父级div也浮动，需要定义宽度。<br>（7）父级div定义display:table。<br>（8）结尾处加br标签clear:both。<br>主要是第三种，可谈到IE6、IE7的haslayout<br><a href="http://www.zhangxinxu.com/wordpress/2010/01/%E5%AF%B9overflow%E4%B8%8Ezoom%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%A4%E8%AF%86/" target="_blank" rel="external">张鑫旭-对overflow与zoom”清除浮动”的一些认识</a></p>
+<p>####4、盒模型谈到box-sizing<br>content-box  border-box</p>
+<hr>
+<p>###JS</p>
+<p>####1、 <img src="http://img.blog.csdn.net/20170810132247773?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>通过f能访问到a，但访问不到b<br>因为f是原型指向Object，不再是Function的实例，通过f.constructor.prototype可以找到b</p>
+<p>####2、基本类型与typeof返回<br>基本类型：number, boolean, string, object, null, undefined, symbol<br>typeof：number, boolean, string, object, function, undefined, symbol</p>
+<p>####3、类型转换表<br><img src="http://img.blog.csdn.net/20170810220652691?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####4、new关键字操作<br>new Foo() 会新建一个空对象，让对象的原型指向Foo.prototype，然后将this指向这个对象并执行构造函数内的语句，如果没有定义return或者return的不是一个对象，就会返回这个新对象</p>
+<p>####5、this说明<br>作为对象方法调用的函数不管是实例属性还是原型属性，调用时this都指向这个对象，因为this是存在作用域链中的<br><img src="http://img.blog.csdn.net/20170810220937617?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####6、Date对象<br><img src="http://img.blog.csdn.net/20170810221012396?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####7、ajax状态<br>readyState几个属性值：<br>0 - 未调用open<br>1 - 已调用open，但未调用send<br>2 - 已调用send，但未接收到响应<br>3 - 已接收到部分响应数据<br>4 - 接收到全部数据</p>
+<p>####8、sessionStorage生命周期<br>页面会话在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面会话。在新标签或窗口打开一个页面会初始化一个新的会话，这点和 session cookies 的运行方式不同。<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/sessionStorage" target="_blank" rel="external">MDN属性描述地址</a></p>
+<p>####9、null和undefined的区别<br>a. 转数字  0   NaN<br>b. typeof   object  undefined<br>c. 含义   空对象引用   不存在的值<br><a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html" target="_blank" rel="external">阮一峰-undefined与null的区别</a></p>
+<p>####10、js作用域<br>当执行一段JavaScript代码（全局代码或函数）时，JavaScript引擎会创建为其创建一个作用域又称为执行上下文（Execution Context），在页面加载后会首先创建一个全局的作用域，然后每执行一个函数，会建立一个对应的作用域，从而形成了一条作用域链。</p>
+<p>####11、IE和标准DOM事件流区别<br>是否支持捕获，是否传递event对象，事件类型加on，取消默认操作和冒泡的方式</p>
+<hr>
+<p>###数据结构</p>
+<p>####1、树、二叉树、满二叉树、完全二叉树、平衡二叉树、哈夫曼树</p>
+<blockquote>
+<p>树和二叉树的2个主要差别：</p>
+<ol>
+<li>树中结点的最大度数没有限制，而二叉树结点的最大度数为2；</li>
+<li>树的结点无左、右之分，而二叉树的结点有左、右之分</li>
+</ol>
+</blockquote>
+<p>二叉树深度 n<br>最大节点个数 2<sup>n</sup>-1<br>满二叉树叶子结点个数 2<sup>n-1</sup></p>
+<blockquote>
+<p>完全二叉树包含满二叉树</p>
+<p><strong>1.满二叉树</strong><br><img src="http://img.blog.csdn.net/20160521205928048?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="这里写图片描述"><br><strong>2.完全二叉树</strong><br><img src="http://img.blog.csdn.net/20160521210645823?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="这里写图片描述"><br><strong>3.平衡二叉树（AVL树）</strong><br>对于每一个节点来说，它的左右子树的高度之差不能超过1，如果插入或者删除一个节点使得高度之差大于1，就要进行节点之间的旋转。<br><img src="http://p.blog.csdn.net/images/p_blog_csdn_net/hytdsky/609806/o_2008111712242127.jpg" alt="这里写图片描述"></p>
+<blockquote>
+<p>红黑树<br>map 就是采用红黑树存储的，红黑树(RB Tree)是平衡二叉树，其优点就是树到叶子节点深度一致，查找的效率也就一样，为logN。在实行查找，插入，删除的效率都一致，而当是全部静态数据时，没有太多优势，可能采用hash表各合适。<br>hash_map是一个hash table占用内存更多，查找效率高一些，但是hash的时间比较费时。<br>总体来说，hash_map 查找速度会比map快，而且查找速度基本和数据数据量大小，属于常数级别；而map的查找速度是log(n)级别。</p>
+</blockquote>
+</blockquote>
+<p><strong>4.哈夫曼树</strong><br>带权路径长度达到最小的二叉树，也叫做最优二叉树。</p>
+<blockquote>
+<p>几个概念<br><strong>路径</strong>： 树中一个结点到另一个结点之间的分支构成这两个结点之间的路径。<br> <strong>路径长度</strong>：路径上的分枝数目称作路径长度。<br> <strong>树的路径长度</strong>：从树根到每一个结点的路径长度之和。<br> <strong>结点的带权路径长度</strong>：在一棵树中，如果其结点上附带有一个权值，通常把该结点的路径长度与该结点上的权值之积称为该结点的带权路径长度</p>
+</blockquote>
+<p>####2、常用排序算法的ES6实现及复杂度<br>算法链接：<a href="http://blog.jiangzilong.com/2017/08/01/%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%AE%97%E6%B3%95%E7%9A%84%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%EF%BC%88ES6%EF%BC%89/" target="_blank" rel="external">常用排序算法ES6实现</a><br>复杂度：<br><img src="http://images2015.cnblogs.com/blog/1089184/201701/1089184-20170118180823468-388996114.png" alt="复杂度"></p>
+<p>####3、树、堆、二叉树、二叉堆<br><img src="https://pic1.zhimg.com/v2-e7a99fda571a4294e9b2196d58f8e65c_b.png" alt="这里写图片描述"></p>
+<p>####4、DFA、NFA、正则匹配<br><a href="http://blog.csdn.net/congduan/article/details/45459963" target="_blank" rel="external">从DFA角度理解KMP算法</a><br><img src="http://img.blog.csdn.net/20150503171446137" alt="这里写图片描述"></p>
+<hr>
+<p>###网络与优化</p>
+<p>####1、TCP三次握手四次挥手<br><a href="http://www.imooc.com/article/19098" target="_blank" rel="external">http://www.imooc.com/article/19098</a></p>
+<p>####2、减少页面加载时间的方式<br>a. 减少HTTP请求（资源合并，雪碧图）<br>b. 使用异步执行长时间运行的脚本<br>c. 减少重排重绘<br>d. 合理组织代码<br>e. CDN加速<br>f.  缓存</p>
+<p>####3、对于HTTPS的认识<br><a href="http://www.mahaixiang.cn/internet/1233.html" target="_blank" rel="external">HTTP和HTTPS的区别</a></p>
+<hr>
+<p>###基本概念</p>
+<p>####1、Web APP、Hybrid APP、Native APP<br><img src="http://img.blog.csdn.net/20170810215258659?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####2、进程线程区别<br>a. 一个程序至少有一个进程,一个进程至少有一个线程。<br>b. 进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。<br>c. 每个独立的进程有一个程序运行的入口、顺序执行序列和程序的出口，但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。</p>
+<p>####3、浏览器内核、渲染引擎、js引擎<br>浏览器内核分成两部分渲染引擎和js引擎，由于js引擎越来越独立，内核就倾向于只指渲染引擎</p>
+<p><strong>渲染引擎</strong><br>IE —— Trident<br>Chrome —— Webkit -&gt; Blink<br>Safari —— Webkit<br>Firefox —— Gecko<br>Opera —— Presto(已弃用) -&gt; Blink(13年后)</p>
+<p><strong>js引擎</strong><br>IE —— JScript-&gt;Chakra (IE9之后)<br>Chrome —— V8<br>Safari —— JavaScriptCore（最新版名字SquirrelFish）<br>Firefox —— monkey系列<br>Opera —— Carakan</p>
+<p>####4、进程主要组成<br>① 程序。作用：描述进程要完成的功能。<br>② 数据。作用：程序在执行时所需要的数据和工作区。<br>③ PCB。作用：包含进程的描述信息和控制信息。它是进程存在的唯一标志。 进程控制块</p>
+<p>####5、shim/polyfill<br>一个shim是一个库,它将一个新的API引入到一个旧的环境中,而且仅靠旧环境中已有的手段实现<br>一个polyfill就是一个用在浏览器API上的shim.我们通常的做法是先检查当前浏览器是否支持某个API,如果不支持的话就加载对应的polyfill.然后新旧浏览器就都可以使用这个API了</p>
+<blockquote>
+<p>术语polyfill来自于一个家装产品Polyfilla：Polyfilla是一个英国产品,在美国称之为Spackling Paste(译者注:刮墙的,在中国称为腻子).记住这一点就行:把旧的浏览器想象成为一面有了裂缝的墙.这些[polyfills]会帮助我们把这面墙的裂缝抹平,还我们一个更好的光滑的墙壁(浏览器)</p>
+</blockquote>
+<p>####6、git相关<br>常用命令：<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git <span class="keyword">clone</span> <span class="title">(HTTPS</span>)https://××× 或 (SSH)git@×××</div><div class="line">git add .</div><div class="line">git checkout ×××</div><div class="line">git commit -m <span class="string">"×××"</span></div><div class="line">git remote add origin https://×××</div><div class="line">git push -u origin <span class="keyword">master</span></div><div class="line"><span class="title">git</span> pull origin <span class="keyword">master</span></div><div class="line"></div><div class="line"><span class="title">git</span> diff</div><div class="line">git status</div><div class="line">git checkout -b mybranch 创建并切换 / git branch mybranch 创建不切换</div><div class="line">git branch 切换</div><div class="line">git checkout <span class="keyword">master</span></div><div class="line"><span class="title">git</span> merge mybranch</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>push -u解释<br>如果当前分支只有一个追踪分支，那么主机名都可以省略。<br>如果当前分支与多个主机存在追踪关系，那么这个时候-u选项会指定一个默认主机，这样后面就可以不加任何参数使用git push。<br>$ git push -u origin master<br>上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</p>
+</blockquote>
+<p>文件状态变化周期：<br><img src="http://img.blog.csdn.net/20170814204122123?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>untracked——文件未被纳入版本控制管理<br>staged——已放入暂存区<br><a href="https://segmentfault.com/q/1010000005900988" target="_blank" rel="external">git commit -m 与 git commit -am 的区别</a></p>
+<p>两种连接方式：HTTPS和SSH</p>
+<p>####7、linux文件增删改<br>新增： touch vi/vim cat &gt;<br>删除：rm</p>
+<blockquote>
+<p>-r 就是向下递归，不管有多少级目录，一并删除<br>-f 就是直接强行删除，不作任何提示的意思</p>
+</blockquote>
+<p>修改：vi/vim …</p>
+<p>####8、AMD/CMD require.js/common.js<br><a href="http://www.cnblogs.com/chenguangliang/p/5856701.html" target="_blank" rel="external">博客园 - 彻底弄懂CommonJS和AMD/CMD</a></p>
+<p><img src="http://img.blog.csdn.net/20170815165701947?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170814224118255?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170814224421248?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>####9、前端工程化<br>npm+node+webpack+babel<br>js压缩<br><a href="http://blog.csdn.net/qq_30100043/article/details/53402618" target="_blank" rel="external">webpack 配合babel 将es6转成es5 超简单实例</a></p>
+<hr>
+<p>###实践</p>
+<p>####1、瀑布流布局实现</p>
+<p>####2、轮播图</p>
+<p>####</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/15/前端开发环境搭建 node+webpack+babel+js压缩/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          前端开发环境搭建 node+webpack+babel+js压缩
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/03/面试记录 — 铃声多多/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面试记录 —— 铃声多多</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="前端笔试面试题整理" data-title="前端笔试面试题整理" data-url="http://yoursite.com/2017/08/10/前端笔试面试题整理/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 蒋子珑
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端开发环境搭建 node+webpack+babel+js压缩 | 蒋子珑的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="记录前端继承开发环境的配置步骤，使用到npm + node + webpack + babel + js压缩工具，完成前端项目创建+插件下载+模块化开发+压缩打包测试。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发环境搭建 node+webpack+babel+js压缩">
+<meta property="og:url" content="http://yoursite.com/2017/08/15/前端开发环境搭建 node+webpack+babel+js压缩/index.html">
+<meta property="og:site_name" content="蒋子珑的博客">
+<meta property="og:description" content="记录前端继承开发环境的配置步骤，使用到npm + node + webpack + babel + js压缩工具，完成前端项目创建+插件下载+模块化开发+压缩打包测试。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170815191212529?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-08-15T11:20:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端开发环境搭建 node+webpack+babel+js压缩">
+<meta name="twitter:description" content="记录前端继承开发环境的配置步骤，使用到npm + node + webpack + babel + js压缩工具，完成前端项目创建+插件下载+模块化开发+压缩打包测试。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170815191212529?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+  
+    <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="/img/logo1.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">蒋子珑</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">保持渴望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://www.jiangzilong.com">主页</a></li>
+				        
+							<li><a href="/">博客主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/Excel上传/" style="font-size: 10px;">Excel上传</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/JavaScript权威指南/" style="font-size: 10px;">JavaScript权威指南</a> <a href="/tags/LiveEdit/" style="font-size: 10px;">LiveEdit</a> <a href="/tags/NPOI/" style="font-size: 10px;">NPOI</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/事件监听/" style="font-size: 10px;">事件监听</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/元素对齐/" style="font-size: 10px;">元素对齐</a> <a href="/tags/树莓派3/" style="font-size: 10px;">树莓派3</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/笔试面试/" style="font-size: 10px;">笔试面试</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/高性能JavaScript/" style="font-size: 12.5px;">高性能JavaScript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jiangzilong.com/">蒋子珑的个人小站主页</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme" class="switch-aboutme">希望不断成长，变得和身边的人一样优秀</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">蒋子珑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/logo1.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">蒋子珑</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">保持渴望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://www.jiangzilong.com">主页</a></li>
+		        
+					<li><a href="/">博客主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-前端开发环境搭建 node+webpack+babel+js压缩" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/15/前端开发环境搭建 node+webpack+babel+js压缩/" class="article-date">
+  	<time datetime="2017-08-15T11:20:00.000Z" itemprop="datePublished">2017-08-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端开发环境搭建 node+webpack+babel+js压缩
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/babel/">babel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>记录前端继承开发环境的配置步骤，使用到npm + node + webpack + babel + js压缩工具，完成前端项目创建+插件下载+模块化开发+压缩打包测试。</p>
+<a id="more"></a>
+<h2 id="1-安装node-npm"><a href="#1-安装node-npm" class="headerlink" title="1 安装node+npm"></a>1 安装node+npm</h2><p>可以直接去node官网下载node然后安装，网上有很多教程所以不再介绍，这篇文字主要写开发环境的配置<br>安装完成后输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line">npm -v</div></pre></td></tr></table></figure>
+<p>查看版本号确认是否安装成功<br>此外因为npm镜像是在国外，所以使用默认下载的话可能速度非常慢，我们可以修改镜像链接</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config <span class="keyword">set</span> registry <span class="comment">"http://registry.npm.taobao.org"</span> </div><div class="line">npm <span class="comment">config list</span>  //可以查看配置</div></pre></td></tr></table></figure>
+<p>新建一个测试文件夹，进入，shift+鼠标右键（windows环境）打开命令行窗口，输入<code>npm init</code>初始化，发现新增了一个package.json文件，这个就是我们项目的配置文件。npm会根据其中的配置管理依赖项。<br>随后执行<code>npm install</code>安装依赖，目录中多了一个 node_modules 文件夹，里面是一些初始的依赖，需要注意的是如果我们使用的IDE是 WebStrom 的话需要右键该文件夹然后 标记目录为-&gt;排除 ，不然打开项目时IDE会去检索该文件夹，可能造成卡死的状态。</p>
+<h2 id="2-安装webpack，babel-core，babel-preset-es2015，babel-loader"><a href="#2-安装webpack，babel-core，babel-preset-es2015，babel-loader" class="headerlink" title="2 安装webpack，babel-core，babel-preset-es2015，babel-loader"></a>2 安装webpack，babel-core，babel-preset-es2015，babel-loader</h2><p>下一步可以在命令行键入<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save-dev webpack babel-core babel-preset-es2015 babel-loader</div></pre></td></tr></table></figure></p>
+<p>去安装webpack和babel系列，babel每个插件的区别可以在网上查到<br>随后我们可以发现package.json同步更新了</p>
+<h2 id="3-配置webpack"><a href="#3-配置webpack" class="headerlink" title="3 配置webpack"></a>3 配置webpack</h2><p>最后我们就可以配置webpack来完成开发环境的搭建，新建webpack.config.js文件，按照自己的项目修改下面的内容即可。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * webpack.config.js</div><div class="line"> **/</div><div class="line"></div><div class="line"><span class="comment">//使用path定位绝对路径</span></div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">	<span class="comment">//修改上下文，之后entry就可以写相对路径</span></div><div class="line">    context: path.resolve(__dirname, <span class="string">'./js'</span>),</div><div class="line">    <span class="comment">// 当entry是个数组的时候，里面同样包含入口js文件，另外一个参数可以是用来配置webpack提供的一个静态资源服务器，webpack-dev-server。</span></div><div class="line">    <span class="comment">// webpack-dev-server会监控项目中每一个文件的变化，实时的进行构建，并且自动刷新页面</span></div><div class="line">    entry: [</div><div class="line">        <span class="comment">//'webpack/hot/only-dev-server',</span></div><div class="line">        <span class="string">'./main.js'</span></div><div class="line">    ],</div><div class="line">    <span class="comment">// 当我们在entry中定义构建多个文件时，filename可以对应的更改为[name].js用于定义不同文件构建后的名字</span></div><div class="line">    output: &#123;</div><div class="line">        <span class="attr">path</span>: path.resolve(__dirname, <span class="string">'./build'</span>),</div><div class="line">        <span class="attr">filename</span>: <span class="string">'bundle.js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 关于模块的加载相关，我们就定义在module.loaders中。</span></div><div class="line">    <span class="comment">// 这里通过正则表达式去匹配不同后缀的文件名，然后给它们定义不同的加载器。</span></div><div class="line">    <span class="comment">// 比如说给less文件定义串联的三个加载器（！用来定义级联关系）</span></div><div class="line">    <span class="comment">// 此外，还可以添加用来定义png、jpg这样的图片资源在小于10k时自动处理为base64图片的加载器：</span></div><div class="line">    <span class="comment">// &#123; test: /\.(png|jpg)$/,loader: 'url-loader?limit=10000'&#125;</span></div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        <span class="attr">loaders</span>: [&#123;</div><div class="line">            <span class="attr">test</span>: <span class="regexp">/\.js$/</span>,</div><div class="line">            <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span>,</div><div class="line">            <span class="attr">loader</span>: <span class="string">'babel-loader'</span>,</div><div class="line">            <span class="comment">//或者在根目录下新建.babelrc文件输入</span></div><div class="line">            <span class="comment">// &#123;</span></div><div class="line">            <span class="comment">//   "presets": ["es2015"]</span></div><div class="line">            <span class="comment">// &#125;</span></div><div class="line">            query: &#123;</div><div class="line">                <span class="attr">presets</span>: [<span class="string">"es2015"</span>]</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">            <span class="comment">//&#123; test: /\.css$/, loader: "style!css" &#125;,</span></div><div class="line">            <span class="comment">//&#123; test: /\.less/,loader: 'style-loader!css-loader!less-loader'&#125;</span></div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// webpack在构建包的时候会按目录的进行文件的查找，resolve属性中的extensions数组中用于配置程序可以自行补全哪些文件后缀</span></div><div class="line">    <span class="comment">// 然后我们想要加载一个js文件时，只要require(‘common’)就可以加载common.js文件了</span></div><div class="line">    <span class="comment">//resolve:&#123;</span></div><div class="line">    <span class="comment">//    extensions:['','.js','.json']</span></div><div class="line">    <span class="comment">//&#125;</span></div><div class="line">    <span class="comment">// 当我们想在项目中require一些其他的类库或者API，而又不想让这些类库的源码被构建到运行时文件中，这在实际开发中很有必要</span></div><div class="line">    <span class="comment">// 这样我们就可以放心的在项目中使用这些API了：var jQuery = require(“jquery”);</span></div><div class="line">    <span class="comment">// externals: &#123;</span></div><div class="line">    <span class="comment">//    "jquery": "jQuery"</span></div><div class="line">    <span class="comment">// &#125;</span></div><div class="line">    plugins: [</div><div class="line">		<span class="comment">//js压缩插件</span></div><div class="line">        <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin()</div><div class="line">    ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * config.json</div><div class="line"> **/</div><div class="line"></div><div class="line">&#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">"webpack_test"</span>,</div><div class="line">  <span class="string">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="string">"description"</span>: <span class="string">"test"</span>,</div><div class="line">  <span class="string">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">  <span class="string">"scripts"</span>: &#123;</div><div class="line">    <span class="string">"start"</span>: <span class="string">"webpack"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"author"</span>: <span class="string">"jiangzilong"</span>,</div><div class="line">  <span class="string">"license"</span>: <span class="string">"ISC"</span>,</div><div class="line">  <span class="string">"devDependencies"</span>: &#123;</div><div class="line">    <span class="string">"babel-core"</span>: <span class="string">"^6.25.0"</span>,</div><div class="line">    <span class="string">"babel-loader"</span>: <span class="string">"^7.1.1"</span>,</div><div class="line">    <span class="string">"babel-preset-es2015"</span>: <span class="string">"^6.24.1"</span>,</div><div class="line">    <span class="string">"webpack"</span>: <span class="string">"^3.5.4"</span>,</div><div class="line">    <span class="string">"webpack-dev-server"</span>: <span class="string">"^2.7.1"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"jquery"</span>: <span class="string">"^3.2.1"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>附上项目结构<br><img src="http://img.blog.csdn.net/20170815191212529?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>其中build/bundle.js就是我们打包并压缩的js文件，最后在html中引入该script即可<br>另外对于模块化的格式可以参考：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//b.js</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="attr">print</span>: <span class="function">(<span class="params">msg</span>) =&gt;</span> <span class="built_in">console</span>.log(msg)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//main.js</span></div><div class="line"><span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">'jquery'</span>);</div><div class="line"><span class="keyword">var</span> b = <span class="built_in">require</span>(<span class="string">'./b.js'</span>);</div><div class="line"></div><div class="line">b.print(<span class="number">300</span>);</div><div class="line">$(<span class="string">"#div"</span>).text(<span class="string">"hello world"</span>);</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/10/前端笔试面试题整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端笔试面试题整理</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="前端开发环境搭建 node+webpack+babel+js压缩" data-title="前端开发环境搭建 node+webpack+babel+js压缩" data-url="http://yoursite.com/2017/08/15/前端开发环境搭建 node+webpack+babel+js压缩/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 蒋子珑
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>
