@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>页面元素尺寸实例演示 | 蒋子珑的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="很长一段时间对页面的各种尺寸一直迷迷糊糊，客户区尺寸、偏移尺寸、滚动尺寸、屏幕尺寸，各种尺寸各种定位都有差别，下面我们就通过几个实例来分析一下它们分别是什么含义，以及不同css设置对它们产生的影响。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="页面元素尺寸实例演示">
+<meta property="og:url" content="http://yoursite.com/2017/08/15/页面元素尺寸实例演示/index.html">
+<meta property="og:site_name" content="蒋子珑的博客">
+<meta property="og:description" content="很长一段时间对页面的各种尺寸一直迷迷糊糊，客户区尺寸、偏移尺寸、滚动尺寸、屏幕尺寸，各种尺寸各种定位都有差别，下面我们就通过几个实例来分析一下它们分别是什么含义，以及不同css设置对它们产生的影响。">
+<meta property="og:image" content="http://img.blog.csdn.net/20170819135007762?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170819134442340?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170819135439647?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-08-20T08:37:20.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="页面元素尺寸实例演示">
+<meta name="twitter:description" content="很长一段时间对页面的各种尺寸一直迷迷糊糊，客户区尺寸、偏移尺寸、滚动尺寸、屏幕尺寸，各种尺寸各种定位都有差别，下面我们就通过几个实例来分析一下它们分别是什么含义，以及不同css设置对它们产生的影响。">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170819135007762?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+  
+    <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img lazy-src="/img/logo1.jpg" class="js-avatar">
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">蒋子珑</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">保持渴望</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://www.jiangzilong.com">主页</a></li>
+				        
+							<li><a href="/">博客主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+					        
+								<a class="github" target="_blank" href="#" title="github">github</a>
+					        
+								<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+					        
+								<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/net/" style="font-size: 10px;">.net</a> <a href="/tags/Excel上传/" style="font-size: 10px;">Excel上传</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/JavaScript权威指南/" style="font-size: 10px;">JavaScript权威指南</a> <a href="/tags/LiveEdit/" style="font-size: 10px;">LiveEdit</a> <a href="/tags/NPOI/" style="font-size: 10px;">NPOI</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/babel/" style="font-size: 10px;">babel</a> <a href="/tags/css/" style="font-size: 17.5px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html5/" style="font-size: 15px;">html5</a> <a href="/tags/iframe/" style="font-size: 10px;">iframe</a> <a href="/tags/inline-block/" style="font-size: 10px;">inline-block</a> <a href="/tags/js/" style="font-size: 20px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/事件监听/" style="font-size: 10px;">事件监听</a> <a href="/tags/像素/" style="font-size: 10px;">像素</a> <a href="/tags/元素对齐/" style="font-size: 10px;">元素对齐</a> <a href="/tags/树莓派3/" style="font-size: 10px;">树莓派3</a> <a href="/tags/深拷贝/" style="font-size: 10px;">深拷贝</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/笔试面试/" style="font-size: 10px;">笔试面试</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/读书笔记/" style="font-size: 15px;">读书笔记</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a> <a href="/tags/高性能JavaScript/" style="font-size: 12.5px;">高性能JavaScript</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jiangzilong.com/">蒋子珑的个人小站主页</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme" class="switch-aboutme">希望不断成长，变得和身边的人一样优秀</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">蒋子珑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/logo1.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">蒋子珑</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">保持渴望</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://www.jiangzilong.com">主页</a></li>
+		        
+					<li><a href="/">博客主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+			        
+						<a class="github" target="_blank" href="#" title="github">github</a>
+			        
+						<a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+			        
+						<a class="codepen" target="_blank" href="#" title="codepen">codepen</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-页面元素尺寸实例演示" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/15/页面元素尺寸实例演示/" class="article-date">
+  	<time datetime="2017-08-15T11:20:00.000Z" itemprop="datePublished">2017-08-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      页面元素尺寸实例演示
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>很长一段时间对页面的各种尺寸一直迷迷糊糊，客户区尺寸、偏移尺寸、滚动尺寸、屏幕尺寸，各种尺寸各种定位都有差别，下面我们就通过几个实例来分析一下它们分别是什么含义，以及不同css设置对它们产生的影响。</p>
+<a id="more"></a>
+<h3 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h3><hr>
+<p>body引用：<br><code>document.body</code>  <code>document.getElementsByTagName(&#39;body&#39;)[0] (兼容性写法)</code><br>html引用：<br><code>document.documentElement</code></p>
+<p>页面结构<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	...</div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">		<span class="selector-tag">body</span>&#123;</div><div class="line">			<span class="attribute">position</span>: relative;</div><div class="line">		&#125;</div><div class="line">		<span class="selector-id">#el</span>&#123;</div><div class="line">			<span class="attribute">position</span>: absolute;</div><div class="line">			<span class="attribute">top</span>: <span class="number">50px</span>;</div><div class="line">			<span class="attribute">left</span>: <span class="number">50px</span>;</div><div class="line">			<span class="attribute">margin</span>: <span class="number">30px</span>;</div><div class="line">			<span class="attribute">padding</span>: <span class="number">5px</span>;</div><div class="line">			<span class="attribute">width</span>: <span class="number">200px</span>;</div><div class="line">			<span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">			<span class="attribute">background</span>: <span class="number">#c55</span>;</div><div class="line">			<span class="attribute">border</span>: <span class="number">10px</span> solid <span class="number">#55c</span>;</div><div class="line">			<span class="attribute">overflow</span>: auto;</div><div class="line">		&#125;</div><div class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"el"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"el-text"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="实例一-无滚动条"><a href="#实例一-无滚动条" class="headerlink" title="实例一:无滚动条"></a>实例一:无滚动条</h3><p>设定元素尺寸小于el<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#el-text</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">150px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">150px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170819135007762?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>我们针对元素el获取它的各种尺寸值，测试如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">"el"</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>, el.clientWidth);  <span class="comment">//210</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>, el.clientHeight);  <span class="comment">//210</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>, el.clientTop);  <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>, el.clientLeft);  <span class="comment">//10</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>, el.offsetWidth);  <span class="comment">//230</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>, el.offsetHeight);  <span class="comment">//230</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>, el.offsetTop);  <span class="comment">//80</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>, el.offsetLeft);  <span class="comment">//80</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"scroll"</span>, el.scrollWidth);  <span class="comment">//210</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"scroll"</span>, el.scrollHeight);  <span class="comment">//210</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"scroll"</span>, el.scrollTop);  <span class="comment">//0</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"scroll"</span>, el.scrollLeft);  <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
+<p>然后接下来我们来分析一下各种尺寸的含义</p>
+<p>1、客户区尺寸：<br><code>clientWidth/clientHeight</code> —— 元素的内容区域，不包含外层定位和border，大小=content+padding*2<br><code>clientTop/clientLeft</code> —— 客户区到元素上/左边界（可视区域）的距离，大小=border</p>
+<p>2、偏移尺寸：<br><code>offsetWidth/offsetHeight</code> —— 元素的可视区域，不包含外层定位，大小=content+padding<em>2+border</em>2<br><code>offsetTop/offsetLeft</code> —— 客户区定位尺寸，大小=top/left+margin</p>
+<p>3、滚动尺寸：<br><code>scrollWidth/scrollHeight</code> —— 元素的可视区域+滚动区，不包含外层定位和border，大小=content（包括被滚动条隐藏的部分）+padding*2，如果不存在滚动条则和客户区尺寸相同<br><code>scrollTop/scrollLeft</code> —— 滚动区定位尺寸，大小=滚动隐藏的大小</p>
+<h3 id="实例二：有滚动条"><a href="#实例二：有滚动条" class="headerlink" title="实例二：有滚动条"></a>实例二：有滚动条</h3><p>我们在修改容器<code>el-text</code>的大小，使元素部分隐藏，出现滚动条<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#el-text</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">250px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">250px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170819134442340?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>为了更方便测试我们加入事件监听，以查看滚动条变化<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">"el"</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>,el.clientWidth);  <span class="comment">//193</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>,el.clientHeight);  <span class="comment">//193</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>,el.clientTop);  <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>,el.clientLeft);  <span class="comment">//10</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>,el.offsetWidth);  <span class="comment">//230</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>,el.offsetHeight);  <span class="comment">//230</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>,el.offsetTop);  <span class="comment">//80</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>,el.offsetLeft);  <span class="comment">//80</span></div><div class="line"></div><div class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'mouseup'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"scroll"</span>,el.scrollWidth);  <span class="comment">//255</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"scroll"</span>,el.scrollHeight);  <span class="comment">//255</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"scroll"</span>,el.scrollTop);  <span class="comment">//62</span></div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"scroll"</span>,el.scrollLeft);  <span class="comment">//62</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>1、由数据我们可以看到，<code>clientWidth/clientHeight</code>发生了变化，因为可视区发生了改变，滚动条的出现压缩了可视区空间，将其由210-&gt;193，那这减少的17是不是就是滚动条的宽度呢？<br>我们用Page Ruler插件进行测量（注意貌似Ruler工具不支持file://路径的测量，所以我们可以用webstorm创建本地服务器进行测试），得到如图结果<br><img src="http://img.blog.csdn.net/20170819135439647?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>发现正好是17px，所以得出结论：<code>clientWidth/clientHeight</code>只指示可视区大小<br>2、<code>clientTop/clientLeft</code>，<code>offsetWidth/offsetHeight</code>，<code>offsetTop/offsetLeft</code>都没发生改变，因为元素边框、整体大小都没改变<br>3、<code>scrollWidth/scrollHeight</code>：210-&gt;255，<code>scrollHeight</code>：210-&gt;255，也符合大小=可视区+隐藏宽高<br>滚动到最底部</p>
+<blockquote>
+<p>firefox环境，chrome环境下测试结果是<code>scrollWidth</code>：210-&gt;255，<code>scrollHeight</code>：210-&gt;260，不知道为什么会有这么诡异的数值，如果有朋友知道还请指点一下<br>包括firefox下也有不符合逻辑的部分，有的属性会出现1px的偏差，通常发生在<code>offsetWidth/offsetHeight</code></p>
+</blockquote>
+<p><code>scrollTop</code>：0-&gt;62，<code>scrollLeft</code>：0-&gt;62，符合大小=5（padding）+250（子元素大小）-193（可视区大小），也就是滚动条距元素边界（不包括border）的距离</p>
+<blockquote>
+<p>firefox环境，chrome环境任然表现诡异<code>scrollTop</code>：0-&gt;67.19999694824219，<code>scrollLeft</code>：0-&gt;61.599998474121094</p>
+</blockquote>
+<h3 id="实例三：border-box"><a href="#实例三：border-box" class="headerlink" title="实例三：border-box"></a>实例三：border-box</h3><p>下面我们再来修改盒子<a href="http://www.w3school.com.cn/cssref/pr_box-sizing.asp" target="_blank" rel="external">box-sizing</a>属性，我们想单独分析box-sizing带来的影响，所以将元素状态改回到实例一状态<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#el</span>&#123;</div><div class="line">	<span class="attribute">box-sizing</span>: border-box;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#el-text</span>&#123;</div><div class="line">	<span class="attribute">width</span>: <span class="number">150px</span>;</div><div class="line">	<span class="attribute">height</span>: <span class="number">150px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>我们发现图形整体都缩小了，输出结果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>,el.clientWidth);  <span class="comment">//180</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>,el.clientHeight);  <span class="comment">//180</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>,el.clientTop);  <span class="comment">//10</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"client"</span>,el.clientLeft);  <span class="comment">//10</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>,el.offsetWidth);  <span class="comment">//200</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>,el.offsetHeight);  <span class="comment">//200</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>,el.offsetTop);  <span class="comment">//80</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"offset"</span>,el.offsetLeft);  <span class="comment">//80</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"scroll"</span>,el.scrollWidth);  <span class="comment">//180</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"scroll"</span>,el.scrollHeight);  <span class="comment">//180</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"scroll"</span>,el.scrollTop);  <span class="comment">//0</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"scroll"</span>,el.scrollLeft);  <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
+<p>1、<code>clientWidth/clientHeight</code>发生了变化，由<code>box-sizing: border-box;</code>的定义我们可以分析出来，180=200-10<em>2，也就是说我们的width设置会包括border的值，所以可视区也就缩小为180<br>2、<code>clientTop/clientLeft</code>，<code>offsetTop/offsetLeft</code>没有变化，因为虽然border计入width范围，但不影响它的值和元素的相对定位<br>3、<code>offsetWidth/offsetHeight</code>：230-&gt;210，原因和1相同，210=180+5</em>2+10*2<br>4、<code>scrollWidth/scrollHeight</code>：210-&gt;180，原因和1相同</p>
+<p>如描述有偏差欢迎指出~</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/15/前端开发环境搭建 node+webpack+babel+js压缩/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端开发环境搭建 node+webpack+babel+js压缩</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="页面元素尺寸实例演示" data-title="页面元素尺寸实例演示" data-url="http://yoursite.com/2017/08/15/页面元素尺寸实例演示/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 蒋子珑
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+
+<script src="/js/mobile.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+  </div>
+</body>
+</html>

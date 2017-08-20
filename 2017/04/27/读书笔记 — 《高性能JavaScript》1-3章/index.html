@@ -5,20 +5,17 @@
   
   <title>读书笔记 — 《高性能JavaScript》1-3章 | 蒋子珑的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="读书笔记系列 — 《高性能JavaScript》
-刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种">
+  <meta name="description" content="读书笔记系列 — 《高性能JavaScript》刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种常">
 <meta property="og:type" content="article">
 <meta property="og:title" content="读书笔记 — 《高性能JavaScript》1-3章">
 <meta property="og:url" content="http://yoursite.com/2017/04/27/读书笔记 — 《高性能JavaScript》1-3章/index.html">
 <meta property="og:site_name" content="蒋子珑的博客">
-<meta property="og:description" content="读书笔记系列 — 《高性能JavaScript》
-刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种">
+<meta property="og:description" content="读书笔记系列 — 《高性能JavaScript》刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种常">
 <meta property="og:image" content="http://img.blog.csdn.net/20170501213919934?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2017-06-15T06:09:19.000Z">
+<meta property="og:updated_time" content="2017-08-20T08:38:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读书笔记 — 《高性能JavaScript》1-3章">
-<meta name="twitter:description" content="读书笔记系列 — 《高性能JavaScript》
-刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种">
+<meta name="twitter:description" content="读书笔记系列 — 《高性能JavaScript》刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种常">
 <meta name="twitter:image" content="http://img.blog.csdn.net/20170501213919934?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
@@ -228,9 +225,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="读书笔记系列-—-《高性能JavaScript》"><a href="#读书笔记系列-—-《高性能JavaScript》" class="headerlink" title="读书笔记系列 — 《高性能JavaScript》"></a>读书笔记系列 — 《高性能JavaScript》</h1><p><img src="http://img.blog.csdn.net/20170501213919934?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<p>刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种常用的性能测试分析工具。</p>
+        <h1 id="读书笔记系列-—-《高性能JavaScript》"><a href="#读书笔记系列-—-《高性能JavaScript》" class="headerlink" title="读书笔记系列 — 《高性能JavaScript》"></a>读书笔记系列 — 《高性能JavaScript》</h1><p>刚过完《高性能JavaScript》一书，感慨甚多，改变了之前的很多看法，迫不及待想记录下来自己的心得。这本书需要一定的JS基础知识，可以先刷刷《权威指南》再继续深入。书本主要描述了很多在实际开发中我们可以针对web应用做出哪些优化，包括：数据存取、算法控制、DOM编程模式、载入结构、UI线程控制、ajax交互、构建与部署等等方面，最后还推荐了几种常用的性能测试分析工具。</p>
 <a id="more"></a>
+<p><img src="http://img.blog.csdn.net/20170501213919934?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3hxbG1jMDAw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>需要说明的是优化的目的不仅仅是追求极致的代码运行速度，有时候我们也需要在性能和体验上做出均衡，毕竟web应用的最终目的是更好的用户体验。<br>这本书只有200页内容，但结构紧凑描述详尽，基本都会给出优化的实例，并对程序进行分析，包括很多非常有用的知识点，值得珍藏。</p>
 <p>在这里会总结此书的梗概和自己的心得，所以具体的编程实践部分大家还是得参考实际内容哦~</p>
 <h2 id="第1章-加载和执行"><a href="#第1章-加载和执行" class="headerlink" title="第1章 加载和执行"></a>第1章 加载和执行</h2><h3 id="内容："><a href="#内容：" class="headerlink" title="内容："></a>内容：</h3><p><strong>页面代码载入结构优化</strong>，包括怎么引入JS脚本，怎么组织脚本等等</p>
