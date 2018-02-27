@@ -3,30 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>iframe监听鼠标点击事件 | 蒋子珑的博客</title>
+  <title>js判断变量类型方法 | 蒋子珑的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iframe监听鼠标点击事件
-需要实现的页面逻辑是：
-
-点击父窗体中按钮，显示侧边栏；
-点击页面其他区域（iframe）可以隐藏侧边栏">
+  <meta name="description" content="js中的基本变量类型有：
+number、boolean、string、object、null、undefined、symbol
+此外还可以区分出：array、function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iframe监听鼠标点击事件">
-<meta property="og:url" content="http://yoursite.com/2017/04/18/iframe监听鼠标点击事件/index.html">
+<meta property="og:title" content="js判断变量类型方法">
+<meta property="og:url" content="http://yoursite.com/2018/02/27/js判断变量类型方法/index.html">
 <meta property="og:site_name" content="蒋子珑的博客">
-<meta property="og:description" content="iframe监听鼠标点击事件
-需要实现的页面逻辑是：
-
-点击父窗体中按钮，显示侧边栏；
-点击页面其他区域（iframe）可以隐藏侧边栏">
-<meta property="og:updated_time" content="2018-01-02T06:22:08.256Z">
+<meta property="og:description" content="js中的基本变量类型有：
+number、boolean、string、object、null、undefined、symbol
+此外还可以区分出：array、function">
+<meta property="og:updated_time" content="2018-02-27T04:18:06.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iframe监听鼠标点击事件">
-<meta name="twitter:description" content="iframe监听鼠标点击事件
-需要实现的页面逻辑是：
-
-点击父窗体中按钮，显示侧边栏；
-点击页面其他区域（iframe）可以隐藏侧边栏">
+<meta name="twitter:title" content="js判断变量类型方法">
+<meta name="twitter:description" content="js中的基本变量类型有：
+number、boolean、string、object、null、undefined、symbol
+此外还可以区分出：array、function">
   
     <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
   
@@ -200,11 +194,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-iframe监听鼠标点击事件" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js判断变量类型方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/18/iframe监听鼠标点击事件/" class="article-date">
-  	<time datetime="2017-04-18T04:11:00.000Z" itemprop="datePublished">2017-04-18</time>
+      <a href="/2018/02/27/js判断变量类型方法/" class="article-date">
+  	<time datetime="2018-02-27T03:43:13.000Z" itemprop="datePublished">2018-02-27</time>
 </a>
     </div>
   
@@ -215,7 +209,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      iframe监听鼠标点击事件
+      js判断变量类型方法
     </h1>
   
 
@@ -224,7 +218,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iframe/">iframe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件监听/">事件监听</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
 	</div>
 
         
@@ -235,17 +229,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="iframe监听鼠标点击事件"><a href="#iframe监听鼠标点击事件" class="headerlink" title="iframe监听鼠标点击事件"></a>iframe监听鼠标点击事件</h1><hr>
-<p>需要实现的页面逻辑是：</p>
-<ol>
-<li>点击父窗体中按钮，显示侧边栏；</li>
-<li>点击页面其他区域（iframe）可以隐藏侧边栏</li>
-</ol>
+        <p>js中的基本变量类型有：</p>
+<p>number、boolean、string、object、null、undefined、symbol</p>
+<p>此外还可以区分出：array、function</p>
 <a id="more"></a>
-<p>先构造页面文档结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">aside</span> <span class="attr">id</span>=<span class="string">"sidebar"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">%--这是需要隐藏的侧边栏--%</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">%--点击按钮显示侧边栏--%</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">iframe</span> <span class="attr">id</span>=<span class="string">"my-iframe"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">%--获取此区域的点击事件--%</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>因为相对于父窗体，iframe中加载的是一个相对独立的document文档，如果直接在父窗体中使用iframe.onlick监听该区域的点击事件，则不会返回任何结果。<br>首先我们需要获取iframe所属的document对象：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'my-iframe'</span>).contentDocument</div></pre></td></tr></table></figure></p>
-<p>随后对这个document对象注册事件处理程序，监听响应鼠标点击事件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'my-iframe'</span>).contentDocument.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> sidebar = <span class="built_in">document</span>.getElementById(<span class="string">'sidebar'</span>);</div><div class="line">	<span class="keyword">if</span> (sidebar.style.display == <span class="string">'block'</span>)  sidebar.style.display = <span class="string">'none'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>但是这样做还不能满足要求，因为iframe中内容会单独加载，如果我们在它的DOM解析完成之前就去获取document对象并绑定事件监听程序，将不会有任何效果。<br>所以我们需要先监听iframe页面加载完成事件，在处理程序中获取文档对象：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'my-iframe'</span>);</div><div class="line">iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	iframe.contentDocument.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> sidebar = <span class="built_in">document</span>.getElementById(<span class="string">'sidebar'</span>);</div><div class="line">		<span class="keyword">if</span> (sidebar.style.display == <span class="string">'block'</span>)  sidebar.style.display = <span class="string">'none'</span>;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>通常来说都可以用typeof关键字来判断变量类型，首先测试不同类型分别返回什么内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">1</span>);   <span class="comment">// number</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">true</span>);   <span class="comment">// boolean</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">'1'</span>);   <span class="comment">// string</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> [<span class="number">1</span>]);   <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> &#123;<span class="attr">key</span>: <span class="number">1</span>&#125;);   <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;);   <span class="comment">// function</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>);   <span class="comment">// object</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">undefined</span>);   <span class="comment">// undefined</span></div><div class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="built_in">Symbol</span>(<span class="number">1</span>));   <span class="comment">// symbol</span></div></pre></td></tr></table></figure>
+<p>可以看出number、boolean、string、function、undefined、symbol都可以有特定的返回值，但是array、object、null的返回值都为object，这就需要进行进一步判断</p>
+<p><strong>对于null</strong>  </p>
+<p>导致<code>typeof null == &#39;object&#39;</code> 的原因是js中类型值存储占用32 bit，其中1~3位表示type tag，而object标记位是000，null作为空对象表示不指向任何数据所以都为0，这就造成了类型判断时也返回object的情况。</p>
+<p>可以使用js特性<code>null == undefined</code> 来判断，如果一个变量<code>null == undefined</code> 返回true而<code>typeof</code> 返的又是object，那这个变量即为null</p>
+<p><strong>对于array</strong>  </p>
+<p>1、可以使用<code>instanceof</code> 关键字判断，如果<code>obj instanceof Array</code> 返回true，则为array类型；</p>
+<p>2、一种更安全的方法，是使用Object原型中的toString方法，因为对于一个跨window对象的数组（例如使用iframe），在另一window环境中使用方法1会失效，这时可以调用<code>Object.prototype.toString.call(obj) === &#39;[object Array]&#39;</code> ，如果返回为true，则为array类型</p>
+<p>余下的情况则为普通对象类型</p>
 
       
     </div>
@@ -255,18 +252,9 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/04/25/linus系统下使用hexo搭建个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          linus系统下使用hexo搭建个人博客
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/12/CSS像素、设备独立像素、设备像素之间关系/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS像素、设备独立像素、设备像素之间关系</div>
+    <a href="/2018/02/27/js原型关系/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js原型关系</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -280,7 +268,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="iframe监听鼠标点击事件" data-title="iframe监听鼠标点击事件" data-url="http://yoursite.com/2017/04/18/iframe监听鼠标点击事件/"></div>
+	<div class="ds-thread" data-thread-key="js判断变量类型方法" data-title="js判断变量类型方法" data-url="http://yoursite.com/2018/02/27/js判断变量类型方法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

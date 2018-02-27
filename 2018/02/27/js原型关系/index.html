@@ -3,30 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>iframe监听鼠标点击事件 | 蒋子珑的博客</title>
+  <title>js原型关系 | 蒋子珑的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="iframe监听鼠标点击事件
-需要实现的页面逻辑是：
-
-点击父窗体中按钮，显示侧边栏；
-点击页面其他区域（iframe）可以隐藏侧边栏">
+  <meta name="description" content="复习一下js原型关系，包括构造函数的原型和继承对象的原型。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iframe监听鼠标点击事件">
-<meta property="og:url" content="http://yoursite.com/2017/04/18/iframe监听鼠标点击事件/index.html">
+<meta property="og:title" content="js原型关系">
+<meta property="og:url" content="http://yoursite.com/2018/02/27/js原型关系/index.html">
 <meta property="og:site_name" content="蒋子珑的博客">
-<meta property="og:description" content="iframe监听鼠标点击事件
-需要实现的页面逻辑是：
-
-点击父窗体中按钮，显示侧边栏；
-点击页面其他区域（iframe）可以隐藏侧边栏">
-<meta property="og:updated_time" content="2018-01-02T06:22:08.256Z">
+<meta property="og:description" content="复习一下js原型关系，包括构造函数的原型和继承对象的原型。">
+<meta property="og:updated_time" content="2018-02-27T04:18:06.842Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iframe监听鼠标点击事件">
-<meta name="twitter:description" content="iframe监听鼠标点击事件
-需要实现的页面逻辑是：
-
-点击父窗体中按钮，显示侧边栏；
-点击页面其他区域（iframe）可以隐藏侧边栏">
+<meta name="twitter:title" content="js原型关系">
+<meta name="twitter:description" content="复习一下js原型关系，包括构造函数的原型和继承对象的原型。">
   
     <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
   
@@ -200,11 +188,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-iframe监听鼠标点击事件" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js原型关系" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/04/18/iframe监听鼠标点击事件/" class="article-date">
-  	<time datetime="2017-04-18T04:11:00.000Z" itemprop="datePublished">2017-04-18</time>
+      <a href="/2018/02/27/js原型关系/" class="article-date">
+  	<time datetime="2018-02-27T03:11:08.000Z" itemprop="datePublished">2018-02-27</time>
 </a>
     </div>
   
@@ -215,7 +203,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      iframe监听鼠标点击事件
+      js原型关系
     </h1>
   
 
@@ -224,7 +212,7 @@
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iframe/">iframe</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件监听/">事件监听</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链/">原型链</a></li></ul>
 	</div>
 
         
@@ -235,17 +223,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="iframe监听鼠标点击事件"><a href="#iframe监听鼠标点击事件" class="headerlink" title="iframe监听鼠标点击事件"></a>iframe监听鼠标点击事件</h1><hr>
-<p>需要实现的页面逻辑是：</p>
-<ol>
-<li>点击父窗体中按钮，显示侧边栏；</li>
-<li>点击页面其他区域（iframe）可以隐藏侧边栏</li>
-</ol>
+        <p>复习一下js原型关系，包括构造函数的原型和继承对象的原型。</p>
 <a id="more"></a>
-<p>先构造页面文档结构：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">aside</span> <span class="attr">id</span>=<span class="string">"sidebar"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">%--这是需要隐藏的侧边栏--%</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">aside</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">button</span>&gt;</span><span class="tag">&lt;<span class="name">%--点击按钮显示侧边栏--%</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">iframe</span> <span class="attr">id</span>=<span class="string">"my-iframe"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">%--获取此区域的点击事件--%</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>因为相对于父窗体，iframe中加载的是一个相对独立的document文档，如果直接在父窗体中使用iframe.onlick监听该区域的点击事件，则不会返回任何结果。<br>首先我们需要获取iframe所属的document对象：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'my-iframe'</span>).contentDocument</div></pre></td></tr></table></figure></p>
-<p>随后对这个document对象注册事件处理程序，监听响应鼠标点击事件：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">'my-iframe'</span>).contentDocument.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> sidebar = <span class="built_in">document</span>.getElementById(<span class="string">'sidebar'</span>);</div><div class="line">	<span class="keyword">if</span> (sidebar.style.display == <span class="string">'block'</span>)  sidebar.style.display = <span class="string">'none'</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>但是这样做还不能满足要求，因为iframe中内容会单独加载，如果我们在它的DOM解析完成之前就去获取document对象并绑定事件监听程序，将不会有任何效果。<br>所以我们需要先监听iframe页面加载完成事件，在处理程序中获取文档对象：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> iframe = <span class="built_in">document</span>.getElementById(<span class="string">'my-iframe'</span>);</div><div class="line">iframe.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	iframe.contentDocument.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> sidebar = <span class="built_in">document</span>.getElementById(<span class="string">'sidebar'</span>);</div><div class="line">		<span class="keyword">if</span> (sidebar.style.display == <span class="string">'block'</span>)  sidebar.style.display = <span class="string">'none'</span>;</div><div class="line">	&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="构造函数原型"><a href="#构造函数原型" class="headerlink" title="构造函数原型"></a>构造函数原型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> f = <span class="keyword">new</span> F();</div><div class="line"><span class="built_in">console</span>.dir(F);</div><div class="line"><span class="built_in">console</span>.log(f);</div><div class="line"><span class="built_in">console</span>.log(f.__proto__.constructor === F);   <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(F.prototype === f.__proto__);   <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(f.__proto__.__proto__ === <span class="built_in">Object</span>.prototype);   <span class="comment">// true</span></div><div class="line"><span class="built_in">console</span>.log(f.__proto__.__proto__.constructor === <span class="built_in">Object</span>);   <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<p>当我们new一个构造函数的时候，会有以下步骤：</p>
+<p>创建一个空对象=&gt;将构造函数中的this指向这个对象=&gt;执行函数=&gt;将函数现实原型<code>prototype</code>挂载到对象隐式原型<code>__proto__</code>上=&gt;返回对象</p>
+<p>而构造函数F的原型可以看做是构造函数Object new出来的，所以<code>F.prototype.__proto__</code> 和<code>Object.prototype</code> 等价</p>
+<h3 id="继承对象原型"><a href="#继承对象原型" class="headerlink" title="继承对象原型"></a>继承对象原型</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.a = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line">Father.prototype.callA = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Son</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.b = <span class="number">1</span>;</div><div class="line">    Father.call(<span class="keyword">this</span>);</div><div class="line">&#125;</div><div class="line">Son.prototype = <span class="keyword">new</span> Father();</div><div class="line"></div><div class="line"><span class="keyword">let</span> son = <span class="keyword">new</span> Son();</div></pre></td></tr></table></figure>
+<p>考虑类式继承+原型继承的组合继承模式，其中son是继承后的实例对象，它的实例属性包括a和b，隐式原型<code>__proto__</code> 指向了Father类的实例，也包含a属性，再进一层便等价于<code>Father.prototype</code> ，逻辑与构造函数原型关系相同。</p>
+<p>可以看出，js中对象会通过原型关系关联起来，除了<code>Object.create(null)</code> 这种特殊情况没有原型外，其他对象（包括函数和普通对象）都有原型，函数使用显式原型<code>prototype</code> ，对象使用隐式原型<code>__proto__</code> ，以链表形式一层一层直到null。</p>
 
       
     </div>
@@ -255,18 +241,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/04/25/linus系统下使用hexo搭建个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/27/js判断变量类型方法/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          linus系统下使用hexo搭建个人博客
+          js判断变量类型方法
         
       </div>
     </a>
   
   
-    <a href="/2017/04/12/CSS像素、设备独立像素、设备像素之间关系/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CSS像素、设备独立像素、设备像素之间关系</div>
+    <a href="/2018/02/26/实现Vue框架的基本功能/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实现Vue框架的基本功能</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -280,7 +266,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="iframe监听鼠标点击事件" data-title="iframe监听鼠标点击事件" data-url="http://yoursite.com/2017/04/18/iframe监听鼠标点击事件/"></div>
+	<div class="ds-thread" data-thread-key="js原型关系" data-title="js原型关系" data-url="http://yoursite.com/2018/02/27/js原型关系/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
