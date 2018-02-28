@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2018 | 蒋子珑的博客</title>
+  <title>三路快排——挑食的贪吃蛇 | 蒋子珑的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="北理控制科学研究生，本想当工头，没曾想入错行扣起了代码。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="蒋子珑的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="提供一种思路，快速理解三路快排算法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三路快排——挑食的贪吃蛇">
+<meta property="og:url" content="http://yoursite.com/2018/02/28/三路快排——挑食的贪吃蛇/index.html">
 <meta property="og:site_name" content="蒋子珑的博客">
-<meta property="og:description" content="北理控制科学研究生，本想当工头，没曾想入错行扣起了代码。">
+<meta property="og:description" content="提供一种思路，快速理解三路快排算法。">
+<meta property="og:updated_time" content="2018-02-28T05:36:59.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蒋子珑的博客">
-<meta name="twitter:description" content="北理控制科学研究生，本想当工头，没曾想入错行扣起了代码。">
+<meta name="twitter:title" content="三路快排——挑食的贪吃蛇">
+<meta name="twitter:description" content="提供一种思路，快速理解三路快排算法。">
   
     <link rel="alternative" href="/atom.xml" title="蒋子珑的博客" type="application/atom+xml">
   
@@ -187,237 +188,101 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-三路快排——挑食的贪吃蛇" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/28/三路快排——挑食的贪吃蛇/" class="archive-article-date">
-  	<time datetime="2018-02-28T05:23:05.000Z" itemprop="datePublished">Feb 28</time>
+    <div class="article-meta">
+      <a href="/2018/02/28/三路快排——挑食的贪吃蛇/" class="article-date">
+  	<time datetime="2018-02-28T05:23:05.000Z" itemprop="datePublished">2018-02-28</time>
 </a>
-        </div>
-    	 
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/28/三路快排——挑食的贪吃蛇/">三路快排——挑食的贪吃蛇</a>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      三路快排——挑食的贪吃蛇
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
 	</div>
 
-          
+        
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>提供一种思路，快速理解三路快排算法。</p>
+<a id="more"></a>
+<p>我们可以将快排的单次迭代过程比喻为：一条挑食的贪吃蛇。</p>
+<p>首先写出快排函数基本框架：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quick3Sort</span>(<span class="params">arr, l = <span class="number">0</span>, r = arr.length - <span class="number">1</span></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">let</span> i = l, m = i+<span class="number">1</span>, j = r;</div><div class="line">    <span class="keyword">let</span> pivot = arr[l];</div><div class="line">  	<span class="comment">// ...</span></div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我们将数组看为蛇的行走路径，路的起点是l，终点是r，蛇的初始长度为1，蛇头处于m位置，蛇本身有个初始数值——食谱数值（哨兵pivot）。</p>
+<p>快排流程是：这条挑食的贪吃蛇并不会吃掉所有的元素，循环开始后，判断蛇头位置的数值：</p>
+<p>1、如果比自身食谱数值小，则将其抛到身后，蛇头蛇身前进1 (i++, m++)，长度不变；</p>
+<p>2、如果比食谱数值大，则将其吐到路径的尽头，路径尽头向前挪动1（j–）；</p>
+<p>3、如果和食谱数值相等，则判断是自己的菜，贪吃蛇就会吞掉它，身体长度+1 (m++)；</p>
+<p>如果蛇头碰触到尽头则停止循环，因此我们可以构造循环体：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (m&lt;=j) &#123;</div><div class="line">    <span class="keyword">if</span>(arr[m]&lt;pivot) [arr[i++], arr[m++]] = [arr[m], arr[i]];</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(arr[m]&gt;pivot) [arr[m], arr[j--]] = [arr[j], arr[m]];</div><div class="line">    <span class="keyword">else</span> m++;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>随后再对蛇尾之后的原始路径和蛇头之前的原始路径递归排序：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">quick3Sort(arr, l, i - <span class="number">1</span>);</div><div class="line">quick3Sort(arr, j + <span class="number">1</span>, r);</div></pre></td></tr></table></figure>
+<p>再写出整体的函数结构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">quick3Sort</span>(<span class="params">arr, l = <span class="number">0</span>, r = arr.length - <span class="number">1</span></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (l &gt;= r) <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">let</span> i = l, m = i+<span class="number">1</span>, j = r;</div><div class="line">    <span class="keyword">let</span> pivot = arr[l];</div><div class="line">    <span class="keyword">while</span> (m&lt;=j) &#123;</div><div class="line">        <span class="keyword">if</span>(arr[m]&lt;pivot) [arr[i++], arr[m++]] = [arr[m], arr[i]];</div><div class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(arr[m]&gt;pivot) [arr[m], arr[j--]] = [arr[j], arr[m]];</div><div class="line">        <span class="keyword">else</span> m++;</div><div class="line">    &#125;</div><div class="line">    quick3Sort(arr, l, i - <span class="number">1</span>);</div><div class="line">    quick3Sort(arr, j + <span class="number">1</span>, r);</div><div class="line">    <span class="keyword">return</span> arr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/27/元素上下左右居中实现/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">元素上下左右居中实现</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/27/元素上下左右居中实现/" class="archive-article-date">
-  	<time datetime="2018-02-27T15:10:40.000Z" itemprop="datePublished">Feb 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/27/元素上下左右居中实现/">元素上下左右居中实现</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/27/三栏布局实现/" class="archive-article-date">
-  	<time datetime="2018-02-27T14:39:03.000Z" itemprop="datePublished">Feb 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/27/三栏布局实现/">三栏布局实现</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/css/">css</a></li></ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="三路快排——挑食的贪吃蛇" data-title="三路快排——挑食的贪吃蛇" data-url="http://yoursite.com/2018/02/28/三路快排——挑食的贪吃蛇/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/27/面试要点梳理/" class="archive-article-date">
-  	<time datetime="2018-02-27T06:57:09.000Z" itemprop="datePublished">Feb 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/27/面试要点梳理/">面试要点梳理</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/27/js判断变量类型方法/" class="archive-article-date">
-  	<time datetime="2018-02-27T03:43:13.000Z" itemprop="datePublished">Feb 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/27/js判断变量类型方法/">js判断变量类型方法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/27/js原型关系/" class="archive-article-date">
-  	<time datetime="2018-02-27T03:11:08.000Z" itemprop="datePublished">Feb 27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/27/js原型关系/">js原型关系</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/原型链/">原型链</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/26/实现Vue框架的基本功能/" class="archive-article-date">
-  	<time datetime="2018-02-26T06:10:51.000Z" itemprop="datePublished">Feb 26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/26/实现Vue框架的基本功能/">实现Vue框架的基本功能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 </div>
       <footer id="footer">
   <div class="outer">
